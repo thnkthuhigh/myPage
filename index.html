@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Creative Developer</title>
+    <meta name="description" content="Creative Developer Portfolio - Showcasing innovative web experiences">
+    
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Vanilla Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- ==================== PRELOADER ==================== -->
+    <div id="preloader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-counter">
+                <span id="loader-number">0</span>%
+            </div>
+            <div class="loader-name">
+                <span class="loader-char">P</span>
+                <span class="loader-char">O</span>
+                <span class="loader-char">R</span>
+                <span class="loader-char">T</span>
+                <span class="loader-char">F</span>
+                <span class="loader-char">O</span>
+                <span class="loader-char">L</span>
+                <span class="loader-char">I</span>
+                <span class="loader-char">O</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CUSTOM CURSOR ==================== -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- ==================== 3D CANVAS BACKGROUND ==================== -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ==================== NOISE OVERLAY ==================== -->
+    <div class="noise-overlay"></div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" data-magnetic>
+                <span class="logo-text">TH<span class="logo-accent">.</span></span>
+            </a>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="#home" class="nav-link active" data-magnetic>
+                    <span class="nav-link-text">Trang chủ</span>
+                    <span class="nav-link-number">01</span>
+                </a>
+                <a href="#about" class="nav-link" data-magnetic>
+                    <span class="nav-link-text">Giới thiệu</span>
+                    <span class="nav-link-number">02</span>
+                </a>
+                <a href="#skills" class="nav-link" data-magnetic>
+                    <span class="nav-link-text">Kỹ năng</span>
+                    <span class="nav-link-number">03</span>
+                </a>
+                <a href="#projects" class="nav-link" data-magnetic>
+                    <span class="nav-link-text">Dự án</span>
+                    <span class="nav-link-number">04</span>
+                </a>
+                <a href="#experience" class="nav-link" data-magnetic>
+                    <span class="nav-link-text">Kinh nghiệm</span>
+                    <span class="nav-link-number">05</span>
+                </a>
+                <a href="#resume" class="nav-link" data-magnetic>
+                    <span class="nav-link-text">CV</span>
+                    <span class="nav-link-number">06</span>
+                </a>
+                <a href="#contact" class="nav-link" data-magnetic>
+                    <span class="nav-link-text">Liên hệ</span>
+                    <span class="nav-link-number">07</span>
+                </a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" data-magnetic aria-label="Toggle theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== MOBILE MENU ==================== -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-bg"></div>
+        <div class="mobile-menu-content">
+            <a href="#home" class="mobile-link">
+                <span class="mobile-link-number">01</span>
+                <span class="mobile-link-text">Trang chủ</span>
+            </a>
+            <a href="#about" class="mobile-link">
+                <span class="mobile-link-number">02</span>
+                <span class="mobile-link-text">Giới thiệu</span>
+            </a>
+            <a href="#skills" class="mobile-link">
+                <span class="mobile-link-number">03</span>
+                <span class="mobile-link-text">Kỹ năng</span>
+            </a>
+            <a href="#projects" class="mobile-link">
+                <span class="mobile-link-number">04</span>
+                <span class="mobile-link-text">Dự án</span>
+            </a>
+            <a href="#experience" class="mobile-link">
+                <span class="mobile-link-number">05</span>
+                <span class="mobile-link-text">Kinh nghiệm</span>
+            </a>
+            <a href="#resume" class="mobile-link">
+                <span class="mobile-link-number">06</span>
+                <span class="mobile-link-text">CV</span>
+            </a>
+            <a href="#contact" class="mobile-link">
+                <span class="mobile-link-number">07</span>
+                <span class="mobile-link-text">Liên hệ</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ==================== SCROLL PROGRESS ==================== -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+        <!-- ==================== HERO SECTION ==================== -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge reveal-up">
+                        <span class="badge-dot"></span>
+                        <span>Sẵn sàng cho cơ hội mới</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-line reveal-up">
+                            <span class="title-word">Xin chào, tôi là</span>
+                        </span>
+                        <span class="title-line reveal-up">
+                            <span class="title-name glitch" data-text="Thư High">Thư High</span>
+                        </span>
+                        <span class="title-line reveal-up">
+                            <span class="title-role">
+                                <span class="role-bracket">{</span>
+                                <span id="typed-text" class="typed-text"></span>
+                                <span class="typed-cursor">|</span>
+                                <span class="role-bracket">}</span>
+                            </span>
+                        </span>
+                    </h1>
+                    
+                    <p class="hero-description reveal-up">
+                        Tôi tạo ra những trải nghiệm web <span class="highlight-text">sáng tạo</span> và 
+                        <span class="highlight-text">ấn tượng</span>. Kết hợp giữa thiết kế đẹp mắt 
+                        và code chất lượng cao để mang đến sản phẩm tốt nhất.
+                    </p>
+                    
+                    <div class="hero-cta reveal-up">
+                        <a href="#projects" class="btn btn-primary" data-magnetic>
+                            <span class="btn-text">Xem dự án</span>
+                            <span class="btn-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </span>
+                            <div class="btn-bg"></div>
+                        </a>
+                        <a href="#contact" class="btn btn-outline" data-magnetic>
+                            <span class="btn-text">Liên hệ ngay</span>
+                            <span class="btn-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </span>
+                            <div class="btn-bg"></div>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-social reveal-up">
+                        <a href="https://github.com" target="_blank" class="social-link" data-magnetic data-tooltip="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="social-link" data-magnetic data-tooltip="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="social-link" data-magnetic data-tooltip="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="mailto:hello@example.com" class="social-link" data-magnetic data-tooltip="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal-up">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-border"></div>
+                        <div class="hero-image">
+                            <div class="avatar-placeholder">
+                                <span>TH</span>
+                            </div>
+                        </div>
+                        <div class="hero-image-decoration">
+                            <div class="decoration-circle"></div>
+                            <div class="decoration-dots"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating cards -->
+                    <div class="floating-card card-1" data-tilt data-tilt-max="15" data-tilt-speed="400">
+                        <div class="floating-card-icon">🚀</div>
+                        <div class="floating-card-text">
+                            <span class="card-number">50+</span>
+                            <span class="card-label">Dự án</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2" data-tilt data-tilt-max="15" data-tilt-speed="400">
+                        <div class="floating-card-icon">⭐</div>
+                        <div class="floating-card-text">
+                            <span class="card-number">3+</span>
+                            <span class="card-label">Năm KN</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-3" data-tilt data-tilt-max="15" data-tilt-speed="400">
+                        <div class="floating-card-icon">💡</div>
+                        <div class="floating-card-text">
+                            <span class="card-number">100%</span>
+                            <span class="card-label">Đam mê</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="mouse-wheel"></div>
+                </div>
+                <span>Cuộn xuống</span>
+            </div>
+        </section>
+
+        <!-- ==================== MARQUEE ==================== -->
+        <div class="marquee-section">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span>CREATIVE DEVELOPER</span>
+                    <span class="marquee-separator">✦</span>
+                    <span>UI/UX DESIGNER</span>
+                    <span class="marquee-separator">✦</span>
+                    <span>PROBLEM SOLVER</span>
+                    <span class="marquee-separator">✦</span>
+                    <span>FULL STACK</span>
+                    <span class="marquee-separator">✦</span>
+                    <span>CREATIVE DEVELOPER</span>
+                    <span class="marquee-separator">✦</span>
+                    <span>UI/UX DESIGNER</span>
+                    <span class="marquee-separator">✦</span>
+                    <span>PROBLEM SOLVER</span>
+                    <span class="marquee-separator">✦</span>
+                    <span>FULL STACK</span>
+                    <span class="marquee-separator">✦</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== ABOUT SECTION ==================== -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title reveal-up">
+                        <span>Về bản thân</span>
+                    </h2>
+                    <div class="section-line reveal-up"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-image-col reveal-left">
+                        <div class="about-image-wrapper">
+                            <div class="about-image">
+                                <div class="about-avatar-placeholder">
+                                    <span>👨‍💻</span>
+                                </div>
+                            </div>
+                            <div class="about-image-frame"></div>
+                            <div class="experience-badge">
+                                <span class="exp-number">3+</span>
+                                <span class="exp-text">Năm<br>Kinh nghiệm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-content-col">
+                        <div class="about-text reveal-right">
+                            <h3 class="about-subtitle">
+                                Passionate Developer & Creative Thinker
+                            </h3>
+                            <p>
+                                Xin chào! Tôi là một lập trình viên đam mê tạo ra những trải nghiệm web 
+                                độc đáo và ấn tượng. Với nền tảng vững chắc về cả frontend và backend, 
+                                tôi luôn nỗ lực mang đến sản phẩm chất lượng cao nhất.
+                            </p>
+                            <p>
+                                Tôi tin rằng code đẹp không chỉ nằm ở logic mà còn ở cách nó được 
+                                thể hiện ra ngoài. Mỗi pixel, mỗi animation đều phải có mục đích 
+                                và mang lại giá trị cho người dùng.
+                            </p>
+                        </div>
+
+                        <div class="about-stats reveal-right">
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="50">0</span>
+                                <span class="stat-plus">+</span>
+                                <span class="stat-label">Dự án hoàn thành</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="30">0</span>
+                                <span class="stat-plus">+</span>
+                                <span class="stat-label">Khách hàng hài lòng</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="10">0</span>
+                                <span class="stat-plus">+</span>
+                                <span class="stat-label">Giải thưởng</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="1000">0</span>
+                                <span class="stat-plus">+</span>
+                                <span class="stat-label">Commit trên GitHub</span>
+                            </div>
+                        </div>
+
+                        <div class="about-info reveal-right">
+                            <div class="info-item">
+                                <span class="info-label">Tên:</span>
+                                <span class="info-value">Thư High</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Email:</span>
+                                <span class="info-value">hello@example.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Địa điểm:</span>
+                                <span class="info-value">Việt Nam 🇻🇳</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Freelance:</span>
+                                <span class="info-value available">Sẵn sàng</span>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn btn-primary reveal-right" data-magnetic>
+                            <span class="btn-text">Tải CV</span>
+                            <span class="btn-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </span>
+                            <div class="btn-bg"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SKILLS SECTION ==================== -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title reveal-up">
+                        <span>Kỹ năng</span>
+                    </h2>
+                    <div class="section-line reveal-up"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Frontend -->
+                    <div class="skill-category reveal-up" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="skill-category-header">
+                            <div class="skill-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon><line x1="12" y1="22" x2="12" y2="15.5"></line><polyline points="22 8.5 12 15.5 2 8.5"></polyline></svg>
+                            </div>
+                            <h3>Frontend</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">React / Next.js</span>
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">TypeScript</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Tailwind CSS</span>
+                                    <span class="skill-percent">92%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="92"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Three.js / GSAP</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Vue.js / Nuxt</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-category reveal-up" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="skill-category-header">
+                            <div class="skill-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                            </div>
+                            <h3>Backend</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Node.js / Express</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python / Django</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">PostgreSQL / MongoDB</span>
+                                    <span class="skill-percent">88%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">GraphQL / REST API</span>
+                                    <span class="skill-percent">87%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="87"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Docker / AWS</span>
+                                    <span class="skill-percent">82%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="82"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Design -->
+                    <div class="skill-category reveal-up" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                        <div class="skill-category-header">
+                            <div class="skill-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                            </div>
+                            <h3>Tools & Design</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Figma / Adobe XD</span>
+                                    <span class="skill-percent">88%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Git / GitHub</span>
+                                    <span class="skill-percent">93%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="93"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">CI/CD Pipeline</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Testing (Jest/Cypress)</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Agile / Scrum</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Icons -->
+                <div class="tech-orbit reveal-up">
+                    <div class="orbit-center">
+                        <span>TECH</span>
+                        <span>STACK</span>
+                    </div>
+                    <div class="orbit-ring orbit-ring-1">
+                        <div class="orbit-item" style="--angle: 0deg"><span>⚛️</span></div>
+                        <div class="orbit-item" style="--angle: 60deg"><span>🟢</span></div>
+                        <div class="orbit-item" style="--angle: 120deg"><span>🔷</span></div>
+                        <div class="orbit-item" style="--angle: 180deg"><span>🐍</span></div>
+                        <div class="orbit-item" style="--angle: 240deg"><span>🎨</span></div>
+                        <div class="orbit-item" style="--angle: 300deg"><span>🐳</span></div>
+                    </div>
+                    <div class="orbit-ring orbit-ring-2">
+                        <div class="orbit-item" style="--angle: 30deg"><span>📦</span></div>
+                        <div class="orbit-item" style="--angle: 90deg"><span>🔥</span></div>
+                        <div class="orbit-item" style="--angle: 150deg"><span>☁️</span></div>
+                        <div class="orbit-item" style="--angle: 210deg"><span>🗄️</span></div>
+                        <div class="orbit-item" style="--angle: 270deg"><span>⚡</span></div>
+                        <div class="orbit-item" style="--angle: 330deg"><span>🧪</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROJECTS SECTION ==================== -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title reveal-up">
+                        <span>Dự án nổi bật</span>
+                    </h2>
+                    <div class="section-line reveal-up"></div>
+                </div>
+
+                <div class="projects-filter reveal-up">
+                    <button class="filter-btn active" data-filter="all">Tất cả</button>
+                    <button class="filter-btn" data-filter="web">Web App</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="ai">AI/ML</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card reveal-up" data-category="web ai" data-project-id="1" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                        <div class="project-image">
+                            <div class="project-image-placeholder" style="--gradient: linear-gradient(135deg, #6366f1, #a855f7)">
+                                <span>AI Dashboard</span>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">TensorFlow</span>
+                                <span class="project-tag">FastAPI</span>
+                            </div>
+                            <h3 class="project-title">AI-Powered Dashboard</h3>
+                            <p class="project-description">Dashboard analytics thông minh tích hợp AI/ML để phân tích dữ liệu kinh doanh real-time cho hơn 500 doanh nghiệp.</p>
+                            <button class="btn-detail" data-project-id="1">Xem chi tiết →</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card reveal-up" data-category="web" data-project-id="2" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                        <div class="project-image">
+                            <div class="project-image-placeholder" style="--gradient: linear-gradient(135deg, #10b981, #3b82f6)">
+                                <span>E-Commerce</span>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">Next.js</span>
+                                <span class="project-tag">Stripe</span>
+                                <span class="project-tag">MongoDB</span>
+                            </div>
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-description">Nền tảng e-commerce hiện đại với microservices, hỗ trợ multi-vendor, real-time inventory và recommendation engine.</p>
+                            <button class="btn-detail" data-project-id="2">Xem chi tiết →</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card reveal-up" data-category="mobile" data-project-id="3" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                        <div class="project-image">
+                            <div class="project-image-placeholder" style="--gradient: linear-gradient(135deg, #f43f5e, #a855f7)">
+                                <span>Chat App</span>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">React Native</span>
+                                <span class="project-tag">Socket.io</span>
+                                <span class="project-tag">WebRTC</span>
+                            </div>
+                            <h3 class="project-title">Real-time Chat App</h3>
+                            <p class="project-description">Ứng dụng messaging E2E encrypted với voice/video calls, 50K+ concurrent users và AI chatbot assistant.</p>
+                            <button class="btn-detail" data-project-id="3">Xem chi tiết →</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-card reveal-up" data-category="web" data-project-id="4" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                        <div class="project-image">
+                            <div class="project-image-placeholder" style="--gradient: linear-gradient(135deg, #f59e0b, #ec4899)">
+                                <span>Task Manager</span>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">Vue.js</span>
+                                <span class="project-tag">Express.js</span>
+                                <span class="project-tag">OpenAI</span>
+                            </div>
+                            <h3 class="project-title">Task Management System</h3>
+                            <p class="project-description">Quản lý dự án Agile với Kanban, Gantt charts, time tracking và AI-powered task prioritization cho 200+ teams.</p>
+                            <button class="btn-detail" data-project-id="4">Xem chi tiết →</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="project-card reveal-up" data-category="design" data-project-id="5" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                        <div class="project-image">
+                            <div class="project-image-placeholder" style="--gradient: linear-gradient(135deg, #ffecd2, #fcb69f)">
+                                <span>3D Portfolio</span>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">Three.js</span>
+                                <span class="project-tag">GSAP</span>
+                                <span class="project-tag">WebGL</span>
+                            </div>
+                            <h3 class="project-title">3D Interactive Portfolio</h3>
+                            <p class="project-description">Portfolio 3D tương tác hoàn toàn với WebGL, shader effects và smooth scroll navigation.</p>
+                            <button class="btn-detail" data-project-id="5">Xem chi tiết →</button>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 -->
+                    <article class="project-card reveal-up" data-category="web ai" data-project-id="6" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+                        <div class="project-image">
+                            <div class="project-image-placeholder" style="--gradient: linear-gradient(135deg, #89f7fe, #66a6ff)">
+                                <span>Social Media</span>
+                            </div>
+                            <div class="project-overlay">
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                                <a href="#" class="project-link" data-magnetic>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="project-tag">Next.js</span>
+                                <span class="project-tag">Prisma</span>
+                                <span class="project-tag">OpenAI</span>
+                            </div>
+                            <h3 class="project-title">Social Media Platform</h3>
+                            <p class="project-description">Mạng xã hội với AI content moderation, real-time messaging, stories và hệ thống recommendation engine.</p>
+                            <button class="btn-detail" data-project-id="6">Xem chi tiết →</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== EXPERIENCE SECTION ==================== -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title reveal-up">
+                        <span>Kinh nghiệm</span>
+                    </h2>
+                    <div class="section-line reveal-up"></div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item reveal-left">
+                        <div class="timeline-dot">
+                            <div class="timeline-dot-inner"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2024 - Hiện tại</div>
+                            <h3 class="timeline-title">Senior Frontend Developer</h3>
+                            <h4 class="timeline-company">Tech Innovation Corp</h4>
+                            <p class="timeline-description">
+                                Lead team phát triển giao diện cho các sản phẩm SaaS. 
+                                Áp dụng micro-frontend architecture, tối ưu performance đạt 
+                                Lighthouse score 98+. Mentor cho 5 junior developers.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>React</span>
+                                <span>TypeScript</span>
+                                <span>Next.js</span>
+                                <span>AWS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-right">
+                        <div class="timeline-dot">
+                            <div class="timeline-dot-inner"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2022 - 2024</div>
+                            <h3 class="timeline-title">Full Stack Developer</h3>
+                            <h4 class="timeline-company">Digital Agency XYZ</h4>
+                            <p class="timeline-description">
+                                Phát triển và maintain 20+ dự án web cho khách hàng enterprise. 
+                                Xây dựng CI/CD pipeline, triển khai Docker containers, 
+                                và tối ưu database performance.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>Node.js</span>
+                                <span>Vue.js</span>
+                                <span>Docker</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-left">
+                        <div class="timeline-dot">
+                            <div class="timeline-dot-inner"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2021 - 2022</div>
+                            <h3 class="timeline-title">Frontend Developer</h3>
+                            <h4 class="timeline-company">StartUp ABC</h4>
+                            <p class="timeline-description">
+                                Xây dựng UI/UX cho ứng dụng fintech từ đầu. 
+                                Implement responsive design, animation system, 
+                                và accessibility standards (WCAG 2.1).
+                            </p>
+                            <div class="timeline-tags">
+                                <span>React</span>
+                                <span>SCSS</span>
+                                <span>Figma</span>
+                                <span>Jest</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal-right">
+                        <div class="timeline-dot">
+                            <div class="timeline-dot-inner"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2020 - 2021</div>
+                            <h3 class="timeline-title">Intern → Junior Developer</h3>
+                            <h4 class="timeline-company">Web Studio</h4>
+                            <p class="timeline-description">
+                                Bắt đầu hành trình từ intern. Học hỏi nhanh chóng và được 
+                                promote lên junior sau 3 tháng. Phát triển các landing page 
+                                và web application cho SME.
+                            </p>
+                            <div class="timeline-tags">
+                                <span>HTML/CSS</span>
+                                <span>JavaScript</span>
+                                <span>PHP</span>
+                                <span>WordPress</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TESTIMONIALS ==================== -->
+        <section class="section testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">—</span>
+                    <h2 class="section-title reveal-up">
+                        <span>Đánh giá</span>
+                    </h2>
+                    <div class="section-line reveal-up"></div>
+                </div>
+
+                <div class="testimonials-slider reveal-up">
+                    <div class="testimonial-track" id="testimonial-track">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Làm việc rất chuyên nghiệp, code sạch sẽ và luôn đúng deadline. Sản phẩm vượt xa mong đợi của chúng tôi."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">NK</div>
+                                <div class="author-info">
+                                    <span class="author-name">Nguyễn Khoa</span>
+                                    <span class="author-role">CEO, Tech Corp</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Khả năng giải quyết vấn đề xuất sắc. Luôn đưa ra giải pháp sáng tạo và hiệu quả cho mọi thử thách kỹ thuật."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">TL</div>
+                                <div class="author-info">
+                                    <span class="author-name">Trần Linh</span>
+                                    <span class="author-role">CTO, Digital Agency</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Thiết kế UI/UX đẹp mắt, hiệu ứng animation mượt mà. Team chúng tôi rất ấn tượng với chất lượng công việc."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">PH</div>
+                                <div class="author-info">
+                                    <span class="author-name">Phạm Hùng</span>
+                                    <span class="author-role">Product Manager</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-nav">
+                        <button class="testimonial-btn prev" id="testimonial-prev">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+                        <div class="testimonial-dots" id="testimonial-dots"></div>
+                        <button class="testimonial-btn next" id="testimonial-next">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== RESUME / CV SECTION ==================== -->
+        <section id="resume" class="section resume-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">06</span>
+                    <h2 class="section-title reveal-up">
+                        <span>Resume / CV</span>
+                    </h2>
+                    <div class="section-line reveal-up"></div>
+                </div>
+
+                <!-- Resume Tab Navigation -->
+                <div class="resume-tabs reveal-up">
+                    <button class="resume-tab active" data-tab="education">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                        <span>Học vấn</span>
+                    </button>
+                    <button class="resume-tab" data-tab="certifications">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        <span>Chứng chỉ</span>
+                    </button>
+                    <button class="resume-tab" data-tab="awards">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                        <span>Giải thưởng</span>
+                    </button>
+                    <button class="resume-tab" data-tab="languages">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>
+                        <span>Ngôn ngữ</span>
+                    </button>
+                    <button class="resume-tab" data-tab="interests">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        <span>Sở thích</span>
+                    </button>
+                </div>
+
+                <!-- Resume Tab Content -->
+                <div class="resume-content">
+                    <!-- Education -->
+                    <div class="resume-panel active" id="tab-education">
+                        <div class="resume-grid">
+                            <div class="resume-card reveal-up" data-tilt data-tilt-max="5">
+                                <div class="resume-card-accent"></div>
+                                <div class="resume-card-header">
+                                    <div class="resume-card-icon">🎓</div>
+                                    <div class="resume-card-period">2018 - 2022</div>
+                                </div>
+                                <h3 class="resume-card-title">Cử nhân Khoa học Máy tính</h3>
+                                <h4 class="resume-card-org">Đại học Bách Khoa TP.HCM</h4>
+                                <p class="resume-card-desc">Tốt nghiệp loại Giỏi (GPA 3.6/4.0). Chuyên ngành Công nghệ Phần mềm. Nghiên cứu về AI/ML và Web Technologies.</p>
+                                <div class="resume-card-highlights">
+                                    <span>🏆 Thủ khoa khoa CNPM</span>
+                                    <span>📊 GPA: 3.6/4.0</span>
+                                    <span>📝 Luận văn xuất sắc</span>
+                                </div>
+                            </div>
+                            <div class="resume-card reveal-up" data-tilt data-tilt-max="5">
+                                <div class="resume-card-accent"></div>
+                                <div class="resume-card-header">
+                                    <div class="resume-card-icon">📚</div>
+                                    <div class="resume-card-period">2022 - 2024</div>
+                                </div>
+                                <h3 class="resume-card-title">Thạc sĩ Trí tuệ Nhân tạo</h3>
+                                <h4 class="resume-card-org">Đại học Quốc gia HN</h4>
+                                <p class="resume-card-desc">Nghiên cứu chuyên sâu về Deep Learning, NLP và Computer Vision. Xuất bản 2 bài báo khoa học quốc tế.</p>
+                                <div class="resume-card-highlights">
+                                    <span>📄 2 bài báo quốc tế</span>
+                                    <span>🔬 Research Assistant</span>
+                                    <span>🌟 Học bổng 100%</span>
+                                </div>
+                            </div>
+                            <div class="resume-card reveal-up" data-tilt data-tilt-max="5">
+                                <div class="resume-card-accent"></div>
+                                <div class="resume-card-header">
+                                    <div class="resume-card-icon">💻</div>
+                                    <div class="resume-card-period">2020</div>
+                                </div>
+                                <h3 class="resume-card-title">Full Stack Web Development</h3>
+                                <h4 class="resume-card-org">Le Wagon Bootcamp</h4>
+                                <p class="resume-card-desc">Chương trình deep dive 9 tuần vào full-stack development. Xây dựng 3 products hoàn chỉnh từ idea đến deployment.</p>
+                                <div class="resume-card-highlights">
+                                    <span>🚀 3 products shipped</span>
+                                    <span>👥 Team Lead</span>
+                                    <span>⭐ Top 3 batch</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="resume-panel" id="tab-certifications">
+                        <div class="resume-grid">
+                            <div class="resume-card reveal-up" data-tilt data-tilt-max="5">
+                                <div class="resume-card-accent cert"></div>
+                                <div class="resume-card-header">
+                                    <div class="resume-card-icon">☁️</div>
+                                    <div class="resume-card-period">2024</div>
+                                </div>
+                                <h3 class="resume-card-title">AWS Solutions Architect</h3>
+                                <h4 class="resume-card-org">Amazon Web Services</h4>
+                                <p class="resume-card-desc">Professional level certification. Thiết kế và triển khai hệ thống distributed, scalable trên AWS Cloud.</p>
+                                <div class="cert-badge">Professional</div>
+                            </div>
+                            <div class="resume-card reveal-up" data-tilt data-tilt-max="5">
+                                <div class="resume-card-accent cert"></div>
+                                <div class="resume-card-header">
+                                    <div class="resume-card-icon">🔷</div>
+                                    <div class="resume-card-period">2023</div>
+                                </div>
+                                <h3 class="resume-card-title">Google Cloud Professional</h3>
+                                <h4 class="resume-card-org">Google Cloud Platform</h4>
+                                <p class="resume-card-desc">Cloud Developer certification. Expertise in GKE, Cloud Functions, BigQuery và Cloud AI Platform.</p>
+                                <div class="cert-badge">Professional</div>
+                            </div>
+                            <div class="resume-card reveal-up" data-tilt data-tilt-max="5">
+                                <div class="resume-card-accent cert"></div>
+                                <div class="resume-card-header">
+                                    <div class="resume-card-icon">🧠</div>
+                                    <div class="resume-card-period">2024</div>
+                                </div>
+                                <h3 class="resume-card-title">TensorFlow Developer</h3>
+                                <h4 class="resume-card-org">Google / DeepLearning.AI</h4>
+                                <p class="resume-card-desc">Xây dựng và deploy ML models với TensorFlow. Expertise in CNNs, RNNs, NLP và Time Series.</p>
+                                <div class="cert-badge">Specialist</div>
+                            </div>
+                            <div class="resume-card reveal-up" data-tilt data-tilt-max="5">
+                                <div class="resume-card-accent cert"></div>
+                                <div class="resume-card-header">
+                                    <div class="resume-card-icon">🎨</div>
+                                    <div class="resume-card-period">2023</div>
+                                </div>
+                                <h3 class="resume-card-title">Meta Frontend Developer</h3>
+                                <h4 class="resume-card-org">Meta (Facebook)</h4>
+                                <p class="resume-card-desc">Professional Certificate in Frontend Development. React, React Native, UI/UX principles và testing.</p>
+                                <div class="cert-badge">Professional</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Awards -->
+                    <div class="resume-panel" id="tab-awards">
+                        <div class="resume-grid">
+                            <div class="resume-card reveal-up award-card" data-tilt data-tilt-max="5">
+                                <div class="resume-card-accent award"></div>
+                                <div class="award-trophy">🏆</div>
+                                <h3 class="resume-card-title">Best Innovation Award</h3>
+                                <h4 class="resume-card-org">Vietnam Web Summit 2024</h4>
+                                <p class="resume-card-desc">Giải nhất hạng mục Innovation cho dự án AI-powered Education Platform.</p>
+                            </div>
+                            <div class="resume-card reveal-up award-card" data-tilt data-tilt-max="5">
+                                <div class="resume-card-accent award"></div>
+                                <div class="award-trophy">🥇</div>
+                                <h3 class="resume-card-title">Hackathon Champion</h3>
+                                <h4 class="resume-card-org">Google Developer Hackathon 2023</h4>
+                                <p class="resume-card-desc">Quán quân cuộc thi với giải pháp Climate Change Monitoring System sử dụng satellite data.</p>
+                            </div>
+                            <div class="resume-card reveal-up award-card" data-tilt data-tilt-max="5">
+                                <div class="resume-card-accent award"></div>
+                                <div class="award-trophy">🌟</div>
+                                <h3 class="resume-card-title">Top 30 Under 30</h3>
+                                <h4 class="resume-card-org">Forbes Vietnam 2025</h4>
+                                <p class="resume-card-desc">Được vinh danh trong danh sách 30 gương mặt trẻ nổi bật trong lĩnh vực Technology.</p>
+                            </div>
+                            <div class="resume-card reveal-up award-card" data-tilt data-tilt-max="5">
+                                <div class="resume-card-accent award"></div>
+                                <div class="award-trophy">⭐</div>
+                                <h3 class="resume-card-title">Open Source Contributor</h3>
+                                <h4 class="resume-card-org">GitHub Stars 2024</h4>
+                                <p class="resume-card-desc">Được công nhận là GitHub Star cho đóng góp xuất sắc cho cộng đồng open source.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="resume-panel" id="tab-languages">
+                        <div class="languages-grid">
+                            <div class="language-card reveal-up">
+                                <div class="language-flag">🇻🇳</div>
+                                <h3>Tiếng Việt</h3>
+                                <div class="language-level">
+                                    <span class="level-text">Bản ngữ</span>
+                                    <div class="level-dots">
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="language-card reveal-up">
+                                <div class="language-flag">🇬🇧</div>
+                                <h3>English</h3>
+                                <div class="language-level">
+                                    <span class="level-text">IELTS 7.5</span>
+                                    <div class="level-dots">
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="language-card reveal-up">
+                                <div class="language-flag">🇯🇵</div>
+                                <h3>日本語</h3>
+                                <div class="language-level">
+                                    <span class="level-text">JLPT N3</span>
+                                    <div class="level-dots">
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="language-card reveal-up">
+                                <div class="language-flag">🇨🇳</div>
+                                <h3>中文</h3>
+                                <div class="language-level">
+                                    <span class="level-text">HSK 3</span>
+                                    <div class="level-dots">
+                                        <span class="dot filled"></span>
+                                        <span class="dot filled"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interests -->
+                    <div class="resume-panel" id="tab-interests">
+                        <div class="interests-grid">
+                            <div class="interest-card reveal-up">
+                                <div class="interest-icon">🎮</div>
+                                <h4>Gaming</h4>
+                                <p>Indie games & game development</p>
+                            </div>
+                            <div class="interest-card reveal-up">
+                                <div class="interest-icon">📸</div>
+                                <h4>Photography</h4>
+                                <p>Street & landscape photography</p>
+                            </div>
+                            <div class="interest-card reveal-up">
+                                <div class="interest-icon">✈️</div>
+                                <h4>Travel</h4>
+                                <p>Khám phá văn hóa mới</p>
+                            </div>
+                            <div class="interest-card reveal-up">
+                                <div class="interest-icon">📖</div>
+                                <h4>Reading</h4>
+                                <p>Tech books & sci-fi novels</p>
+                            </div>
+                            <div class="interest-card reveal-up">
+                                <div class="interest-icon">🎵</div>
+                                <h4>Music</h4>
+                                <p>Lo-fi & electronic music</p>
+                            </div>
+                            <div class="interest-card reveal-up">
+                                <div class="interest-icon">🏋️</div>
+                                <h4>Fitness</h4>
+                                <p>Gym & running</p>
+                            </div>
+                            <div class="interest-card reveal-up">
+                                <div class="interest-icon">🤖</div>
+                                <h4>AI Research</h4>
+                                <p>Exploring latest AI papers</p>
+                            </div>
+                            <div class="interest-card reveal-up">
+                                <div class="interest-icon">☕</div>
+                                <h4>Coffee</h4>
+                                <p>Specialty coffee enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download CV Button -->
+                <div class="resume-download reveal-up">
+                    <a href="#" class="btn btn-primary btn-lg" data-magnetic>
+                        <span class="btn-text">Tải CV đầy đủ (PDF)</span>
+                        <span class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        </span>
+                        <div class="btn-bg"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT SECTION ==================== -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">07</span>
+                    <h2 class="section-title reveal-up">
+                        <span>Liên hệ</span>
+                    </h2>
+                    <div class="section-line reveal-up"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info reveal-left">
+                        <h3 class="contact-subtitle">Hãy cùng tạo nên điều tuyệt vời!</h3>
+                        <p class="contact-text">
+                            Bạn có dự án thú vị? Hãy liên hệ với tôi. 
+                            Tôi luôn sẵn sàng lắng nghe và đưa ra giải pháp tốt nhất cho bạn.
+                        </p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div>
+                                    <span class="contact-label">Email</span>
+                                    <a href="mailto:hello@example.com" class="contact-value">hello@example.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div>
+                                    <span class="contact-label">Điện thoại</span>
+                                    <a href="tel:+84123456789" class="contact-value">+84 123 456 789</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div>
+                                    <span class="contact-label">Địa điểm</span>
+                                    <span class="contact-value">Việt Nam 🇻🇳</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <a href="https://github.com" target="_blank" class="contact-social-link" data-magnetic>GitHub</a>
+                            <a href="https://linkedin.com" target="_blank" class="contact-social-link" data-magnetic>LinkedIn</a>
+                            <a href="https://facebook.com" target="_blank" class="contact-social-link" data-magnetic>Facebook</a>
+                            <a href="https://twitter.com" target="_blank" class="contact-social-link" data-magnetic>Twitter</a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form reveal-right" id="contact-form">
+                        <div class="form-group">
+                            <div class="form-field">
+                                <input type="text" id="name" name="name" required placeholder=" ">
+                                <label for="name">Họ tên</label>
+                                <div class="form-line"></div>
+                            </div>
+                            <div class="form-field">
+                                <input type="email" id="email" name="email" required placeholder=" ">
+                                <label for="email">Email</label>
+                                <div class="form-line"></div>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" id="subject" name="subject" required placeholder=" ">
+                            <label for="subject">Chủ đề</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-field">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Tin nhắn</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit" data-magnetic>
+                            <span class="btn-text">Gửi tin nhắn</span>
+                            <span class="btn-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </span>
+                            <div class="btn-bg"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-marquee">
+            <div class="footer-marquee-track">
+                <span>LET'S WORK TOGETHER</span>
+                <span class="marquee-separator">✦</span>
+                <span>LET'S WORK TOGETHER</span>
+                <span class="marquee-separator">✦</span>
+                <span>LET'S WORK TOGETHER</span>
+                <span class="marquee-separator">✦</span>
+                <span>LET'S WORK TOGETHER</span>
+                <span class="marquee-separator">✦</span>
+            </div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <span class="footer-logo">TH<span class="logo-accent">.</span></span>
+                        <p>Tạo ra những trải nghiệm web ấn tượng và sáng tạo.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Menu</h4>
+                        <a href="#home">Trang chủ</a>
+                        <a href="#about">Giới thiệu</a>
+                        <a href="#projects">Dự án</a>
+                        <a href="#resume">CV</a>
+                        <a href="#contact">Liên hệ</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Social</h4>
+                        <a href="https://github.com" target="_blank">GitHub</a>
+                        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                        <a href="https://facebook.com" target="_blank">Facebook</a>
+                        <a href="https://twitter.com" target="_blank">Twitter</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Liên hệ</h4>
+                        <a href="mailto:hello@example.com">hello@example.com</a>
+                        <a href="tel:+84123456789">+84 123 456 789</a>
+                        <span>Việt Nam 🇻🇳</span>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Thư High. Tất cả quyền được bảo lưu.</p>
+                    <p>Thiết kế & phát triển với ❤️</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== PROJECT DETAIL MODAL ==================== -->
+    <div class="project-modal-overlay" id="projectModal">
+        <div class="project-modal">
+            <button class="modal-close" id="modalClose">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <div class="modal-scroll">
+                <!-- Modal Hero -->
+                <div class="modal-hero">
+                    <div class="modal-hero-bg" id="modalHeroBg"></div>
+                    <div class="modal-hero-overlay"></div>
+                    <div class="modal-hero-content">
+                        <span class="modal-category" id="modalCategory"></span>
+                        <h2 class="modal-title" id="modalTitle"></h2>
+                        <p class="modal-subtitle" id="modalSubtitle"></p>
+                    </div>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="modal-grid">
+                        <!-- Left Column -->
+                        <div class="modal-main">
+                            <!-- Overview -->
+                            <div class="modal-section">
+                                <h3 class="modal-section-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                                    Tổng quan dự án
+                                </h3>
+                                <p class="modal-overview" id="modalOverview"></p>
+                            </div>
+
+                            <!-- Problem & Solution -->
+                            <div class="modal-section">
+                                <h3 class="modal-section-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="12" r="10"/><path d="M12 17h.01"/></svg>
+                                    Vấn đề & Giải pháp
+                                </h3>
+                                <div class="problem-solution-grid">
+                                    <div class="ps-card problem">
+                                        <div class="ps-label">⚡ Vấn đề</div>
+                                        <p id="modalProblem"></p>
+                                    </div>
+                                    <div class="ps-card solution">
+                                        <div class="ps-label">💡 Giải pháp</div>
+                                        <p id="modalSolution"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Screenshots Gallery -->
+                            <div class="modal-section">
+                                <h3 class="modal-section-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                                    Screenshots
+                                </h3>
+                                <div class="modal-gallery" id="modalGallery"></div>
+                            </div>
+
+                            <!-- Key Features -->
+                            <div class="modal-section">
+                                <h3 class="modal-section-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    Tính năng nổi bật
+                                </h3>
+                                <div class="features-grid" id="modalFeatures"></div>
+                            </div>
+
+                            <!-- Results & Metrics -->
+                            <div class="modal-section">
+                                <h3 class="modal-section-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                                    Kết quả & Thành tích
+                                </h3>
+                                <div class="metrics-grid" id="modalMetrics"></div>
+                            </div>
+                        </div>
+
+                        <!-- Right Sidebar -->
+                        <div class="modal-sidebar">
+                            <!-- Tech Stack -->
+                            <div class="sidebar-card">
+                                <h4 class="sidebar-card-title">Công nghệ sử dụng</h4>
+                                <div class="tech-tags" id="modalTech"></div>
+                            </div>
+
+                            <!-- Project Info -->
+                            <div class="sidebar-card">
+                                <h4 class="sidebar-card-title">Thông tin dự án</h4>
+                                <div class="project-info-list">
+                                    <div class="project-info-item">
+                                        <span class="info-label">Vai trò</span>
+                                        <span class="info-value" id="modalRole"></span>
+                                    </div>
+                                    <div class="project-info-item">
+                                        <span class="info-label">Thời gian</span>
+                                        <span class="info-value" id="modalDuration"></span>
+                                    </div>
+                                    <div class="project-info-item">
+                                        <span class="info-label">Team size</span>
+                                        <span class="info-value" id="modalTeam"></span>
+                                    </div>
+                                    <div class="project-info-item">
+                                        <span class="info-label">Trạng thái</span>
+                                        <span class="info-value status-badge" id="modalStatus"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Challenges -->
+                            <div class="sidebar-card">
+                                <h4 class="sidebar-card-title">Thử thách</h4>
+                                <div class="challenges-list" id="modalChallenges"></div>
+                            </div>
+
+                            <!-- Links -->
+                            <div class="sidebar-card">
+                                <h4 class="sidebar-card-title">Liên kết</h4>
+                                <div class="modal-links" id="modalLinks"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
