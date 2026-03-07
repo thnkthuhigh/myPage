@@ -592,23 +592,33 @@
       });
     };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    // Use section nearest to the top anchor line for stable active state.
+    const updateActiveByPosition = () => {
+      const topAnchor = window.scrollY + header.offsetHeight + 18;
+      let currentId = sections[0].id;
 
-        if (visible.length > 0) {
-          setActive(visible[0].target.id);
+      sections.forEach((section) => {
+        if (section.offsetTop <= topAnchor) {
+          currentId = section.id;
         }
-      },
-      {
-        rootMargin: "-35% 0px -45% 0px",
-        threshold: [0.2, 0.45, 0.7],
-      },
-    );
+      });
 
-    sections.forEach((section) => observer.observe(section));
+      setActive(currentId);
+    };
+
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        updateActiveByPosition();
+        ticking = false;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    updateActiveByPosition();
   };
 
   const initCaseSectionNav = () => {
