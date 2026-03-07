@@ -5,6 +5,7 @@
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
   const header = document.getElementById("site-header");
+  const MOBILE_NAV_BREAKPOINT = 900;
 
   const THEME_KEY = "portfolio_theme";
   const THEME_COLORS = {
@@ -430,24 +431,41 @@
     setTheme(current === "light" ? "dark" : "light");
   };
 
-  const closeMobileMenu = () => {
+  const setMobileMenuState = (isOpen) => {
     if (!mobileMenu || !menuToggle) return;
-    mobileMenu.classList.remove("is-open");
-    menuToggle.classList.remove("is-open");
-    menuToggle.setAttribute("aria-expanded", "false");
+    mobileMenu.classList.toggle("is-open", isOpen);
+    menuToggle.classList.toggle("is-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    menuToggle.setAttribute("aria-label", isOpen ? "Đóng menu" : "Mở menu");
+    document.body.classList.toggle("mobile-menu-open", isOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuState(false);
   };
 
   const initMobileMenu = () => {
     if (!menuToggle || !mobileMenu) return;
 
     menuToggle.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.toggle("is-open");
-      menuToggle.classList.toggle("is-open", isOpen);
-      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      const isOpen = !mobileMenu.classList.contains("is-open");
+      setMobileMenuState(isOpen);
     });
 
     mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", closeMobileMenu);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > MOBILE_NAV_BREAKPOINT) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && mobileMenu.classList.contains("is-open")) {
+        closeMobileMenu();
+      }
     });
   };
 
@@ -592,6 +610,15 @@
       });
     };
 
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        const href = link.getAttribute("href") || "";
+        if (href.startsWith("#")) {
+          setActive(href.slice(1));
+        }
+      });
+    });
+
     // Use section nearest to the top anchor line for stable active state.
     const updateActiveByPosition = () => {
       const topAnchor = window.scrollY + header.offsetHeight + 18;
@@ -618,6 +645,12 @@
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
+    window.addEventListener("hashchange", () => {
+      const hashId = window.location.hash.replace("#", "");
+      if (hashId && navTargets.has(`#${hashId}`)) {
+        setActive(hashId);
+      }
+    });
     updateActiveByPosition();
   };
 

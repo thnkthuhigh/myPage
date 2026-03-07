@@ -66,6 +66,10 @@ body {
   line-height: 1.65;
 }
 
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
 body.modal-open {
   overflow: hidden;
 }
