@@ -702,7 +702,10 @@
       nda: "Source code and production data are NDA-protected. A private live walkthrough can be arranged.",
       videoNote:
         "Public video is not available due NDA; a live walkthrough can be provided in interview.",
-      links: [{ label: "NDA Repository" }, { label: "Private Demo by Appointment" }],
+      links: [
+        { label: "NDA Repository" },
+        { label: "Private Demo by Appointment" },
+      ],
     },
 
     "hiring-landing": {
@@ -1037,18 +1040,39 @@
   const INDEX_TRANSLATIONS = {
     vi: [
       { selector: "a.skip-link", text: "Bỏ qua điều hướng" },
-      { selector: ".site-nav .nav-link[href=\"#about\"]", text: "Giới thiệu" },
-      { selector: ".site-nav .nav-link[href=\"#skills\"]", text: "Kỹ năng" },
-      { selector: ".site-nav .nav-link[href=\"#cv-document\"]", text: "CV" },
-      { selector: ".site-nav .nav-link[href=\"#projects\"]", text: "Dự án" },
-      { selector: ".site-nav .nav-link[href=\"#experience\"]", text: "Hành trình" },
-      { selector: ".site-nav .nav-link[href=\"#contact\"]", text: "Liên hệ" },
-      { selector: "#mobile-menu .mobile-link[href=\"#about\"]", text: "Giới thiệu" },
-      { selector: "#mobile-menu .mobile-link[href=\"#skills\"]", text: "Kỹ năng" },
-      { selector: "#mobile-menu .mobile-link[href=\"#cv-document\"]", text: "CV" },
-      { selector: "#mobile-menu .mobile-link[href=\"#projects\"]", text: "Dự án" },
-      { selector: "#mobile-menu .mobile-link[href=\"#experience\"]", text: "Hành trình" },
-      { selector: "#mobile-menu .mobile-link[href=\"#contact\"]", text: "Liên hệ" },
+      { selector: '.site-nav .nav-link[href="#about"]', text: "Giới thiệu" },
+      { selector: '.site-nav .nav-link[href="#skills"]', text: "Kỹ năng" },
+      { selector: '.site-nav .nav-link[href="#cv-document"]', text: "CV" },
+      { selector: '.site-nav .nav-link[href="#projects"]', text: "Dự án" },
+      {
+        selector: '.site-nav .nav-link[href="#experience"]',
+        text: "Hành trình",
+      },
+      { selector: '.site-nav .nav-link[href="#contact"]', text: "Liên hệ" },
+      {
+        selector: '#mobile-menu .mobile-link[href="#about"]',
+        text: "Giới thiệu",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="#skills"]',
+        text: "Kỹ năng",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="#cv-document"]',
+        text: "CV",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="#projects"]',
+        text: "Dự án",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="#experience"]',
+        text: "Hành trình",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="#contact"]',
+        text: "Liên hệ",
+      },
       {
         selector: ".hero-content .eyebrow",
         text: "Sinh viên năm 4 CNTT · Tập trung Frontend",
@@ -1056,7 +1080,7 @@
       {
         selector: ".hero-content h1",
         html: true,
-        text: "Junior-ready portfolio: thiết kế tốt, <span class=\"headline-accent\">code chắc</span>, và tư duy sản phẩm rõ ràng.",
+        text: 'Junior-ready portfolio: thiết kế tốt, <span class="headline-accent">code chắc</span>, và tư duy sản phẩm rõ ràng.',
       },
       {
         selector: ".hero-lead",
@@ -1066,19 +1090,49 @@
       { selector: ".hero-actions .btn-primary", text: "Xem dự án nổi bật" },
       { selector: ".hero-actions .btn-secondary", text: "Xem CV đầy đủ" },
       { selector: ".hero-actions .btn-tertiary", text: "Tải CV PDF" },
-      { selector: ".hero-proof-chips span:nth-child(1)", text: "5 case study projects" },
-      { selector: ".hero-proof-chips span:nth-child(2)", text: "Product-thinking frontend" },
-      { selector: ".hero-proof-chips span:nth-child(3)", text: "Private repo friendly" },
-      { selector: ".hero-proof-chips span:nth-child(4)", text: "Interview ready" },
-      { selector: ".quick-contact span:last-child", text: "Tìm cơ hội Internship / Junior Frontend" },
+      {
+        selector: ".hero-proof-chips span:nth-child(1)",
+        text: "5 case study projects",
+      },
+      {
+        selector: ".hero-proof-chips span:nth-child(2)",
+        text: "Product-thinking frontend",
+      },
+      {
+        selector: ".hero-proof-chips span:nth-child(3)",
+        text: "Private repo friendly",
+      },
+      {
+        selector: ".hero-proof-chips span:nth-child(4)",
+        text: "Interview ready",
+      },
+      {
+        selector: ".quick-contact span:last-child",
+        text: "Tìm cơ hội Internship / Junior Frontend",
+      },
       { selector: ".panel-title", text: "Tóm tắt nhanh" },
       { selector: ".hero-kpi li:nth-child(1) .kpi-value", text: "Năm 4" },
-      { selector: ".hero-kpi li:nth-child(1) .kpi-label", text: "Sinh viên Khoa học máy tính" },
-      { selector: ".hero-kpi li:nth-child(2) .kpi-value", text: "5 case study" },
-      { selector: ".hero-kpi li:nth-child(2) .kpi-label", text: "4 public + 1 private/NDA project" },
+      {
+        selector: ".hero-kpi li:nth-child(1) .kpi-label",
+        text: "Sinh viên Khoa học máy tính",
+      },
+      {
+        selector: ".hero-kpi li:nth-child(2) .kpi-value",
+        text: "5 case study",
+      },
+      {
+        selector: ".hero-kpi li:nth-child(2) .kpi-label",
+        text: "4 public + 1 private/NDA project",
+      },
       { selector: ".hero-kpi li:nth-child(3) .kpi-value", text: "Core stack" },
-      { selector: ".hero-kpi li:nth-child(3) .kpi-label", text: "React, TypeScript, Next.js, UI System" },
-      { selector: ".availability-text", text: "Sẵn sàng phỏng vấn và test task" },
+      {
+        selector: ".hero-kpi li:nth-child(3) .kpi-label",
+        text: "React, TypeScript, Next.js, UI System",
+      },
+      {
+        selector: ".availability-text",
+        text: "Sẵn sàng phỏng vấn và test task",
+      },
       { selector: ".hero-cv-card .hero-rail-title", text: "CV Recruiter" },
       {
         selector: ".hero-cv-note",
@@ -1088,18 +1142,36 @@
       { selector: ".hero-cv-actions a:nth-child(2)", text: "Tải CV PDF" },
       { selector: ".hero-case-rail .hero-rail-title", text: "Case preview" },
       { selector: "#cv-document .section-label", text: "CV Đầy Đủ" },
-      { selector: "#cv-document .section-title", text: "CV sẵn sàng cho recruiter xem ngay" },
+      {
+        selector: "#cv-document .section-title",
+        text: "CV sẵn sàng cho recruiter xem ngay",
+      },
       {
         selector: "#cv-document .section-subtitle",
         text: "Đây là bản CV gói gọn thông tin cốt lõi để tuyển dụng. Bạn có thể mở online hoặc tải PDF trực tiếp.",
       },
       { selector: ".lane-card .section-label", text: "Làn tuyển dụng nhanh" },
-      { selector: ".trust-item:nth-child(1) h2", text: "Tư duy theo dự án" },
-      { selector: ".trust-item:nth-child(1) p", text: "Không nói chung chung, luôn đi từ bài toán tới kết quả." },
-      { selector: ".trust-item:nth-child(2) h2", text: "Code sạch và có tổ chức" },
-      { selector: ".trust-item:nth-child(2) p", text: "Ưu tiên maintainability, dễ review, dễ mở rộng." },
-      { selector: ".trust-item:nth-child(3) h2", text: "Hợp tác tốt trong team" },
-      { selector: ".trust-item:nth-child(3) p", text: "Giao tiếp rõ, chủ động nhận feedback và iterate nhanh." },
+      { selector: ".trust-item:nth-child(1) h3", text: "Tư duy theo dự án" },
+      {
+        selector: ".trust-item:nth-child(1) p",
+        text: "Không nói chung chung, luôn đi từ bài toán tới kết quả.",
+      },
+      {
+        selector: ".trust-item:nth-child(2) h3",
+        text: "Code sạch và có tổ chức",
+      },
+      {
+        selector: ".trust-item:nth-child(2) p",
+        text: "Ưu tiên maintainability, dễ review, dễ mở rộng.",
+      },
+      {
+        selector: ".trust-item:nth-child(3) h3",
+        text: "Hợp tác tốt trong team",
+      },
+      {
+        selector: ".trust-item:nth-child(3) p",
+        text: "Giao tiếp rõ, chủ động nhận feedback và iterate nhanh.",
+      },
       { selector: ".lane-card h2", text: "Quét nhanh hồ sơ trong 60 giây" },
       {
         selector: ".lane-card > div p:last-of-type",
@@ -1107,9 +1179,15 @@
       },
       { selector: ".lane-links a:nth-child(1)", text: "1. CV Full" },
       { selector: ".lane-links a:nth-child(2)", text: "2. Case Studies" },
-      { selector: ".lane-links a:nth-child(3)", text: "3. Contact / Interview" },
+      {
+        selector: ".lane-links a:nth-child(3)",
+        text: "3. Contact / Interview",
+      },
       { selector: "#about .section-label", text: "Giới thiệu" },
-      { selector: "#about .section-title", text: "SV năm 4 nhưng có thể đóng góp gì ngay?" },
+      {
+        selector: "#about .section-title",
+        text: "SV năm 4 nhưng có thể đóng góp gì ngay?",
+      },
       {
         selector: "#about .about-content p:nth-child(1)",
         text: "Mình không dùng portfolio để “trang trí”, mà dùng để thể hiện cách giải quyết vấn đề. Mỗi project đều có bối cảnh, ràng buộc, quyết định kỹ thuật và kết quả cụ thể.",
@@ -1119,116 +1197,330 @@
         text: "Trong team, mình có thể nhận các task frontend production-level: xây component chuẩn, tích hợp API, tối ưu UX và xử lý lỗi giao diện theo checklist rõ ràng.",
       },
       { selector: "#resume .section-label", text: "CV Snapshot" },
-      { selector: "#resume .section-title", text: "Thông tin CV recruiter cần trong 30 giây" },
+      {
+        selector: "#resume .section-title",
+        text: "Thông tin CV recruiter cần trong 30 giây",
+      },
       { selector: "#fit .section-label", text: "JD Fit" },
-      { selector: "#fit .section-title", text: "Mức độ phù hợp cho Internship / Junior Frontend" },
+      {
+        selector: "#fit .section-title",
+        text: "Mức độ phù hợp cho Internship / Junior Frontend",
+      },
       {
         selector: "#fit .section-subtitle",
         text: "Bảng này giúp recruiter đối chiếu nhanh yêu cầu JD với bằng chứng từ case study.",
       },
-      { selector: "#junior-ready .section-label", text: "Sẵn sàng cho Junior" },
-      { selector: "#junior-ready .section-title", text: "Vì sao có thể đóng góp ngay từ sprint đầu" },
+      {
+        selector:
+          "#fit .section-head + .fit-grid + .section-head .section-label",
+        text: "Sẵn sàng cho Junior",
+      },
+      {
+        selector:
+          "#fit .section-head + .fit-grid + .section-head .section-title",
+        text: "Vì sao có thể đóng góp ngay từ sprint đầu",
+      },
       { selector: "#faq .section-label", text: "FAQ tuyển dụng" },
-      { selector: "#faq .section-title", text: "Một số câu hỏi nhà tuyển dụng hay hỏi" },
+      {
+        selector: "#faq .section-title",
+        text: "Một số câu hỏi nhà tuyển dụng hay hỏi",
+      },
       { selector: "#skills .section-label", text: "Kỹ năng" },
-      { selector: "#skills .section-title", text: "Stack tập trung cho môi trường product" },
+      {
+        selector: "#skills .section-title",
+        text: "Stack tập trung cho môi trường product",
+      },
       { selector: "#projects .section-label", text: "Dự án" },
-      { selector: "#projects .section-title", text: "Case studies dành cho nhà tuyển dụng" },
+      {
+        selector: "#projects .section-title",
+        text: "Case studies dành cho nhà tuyển dụng",
+      },
       {
         selector: "#projects .section-subtitle",
         text: "Tập trung vào vấn đề, giải pháp và kết quả, không làm phô hiệu ứng.",
       },
       { selector: "#experience .section-label", text: "Hành trình" },
-      { selector: "#experience .section-title", text: "Các cột mốc học tập và thực chiến dự án" },
-      { selector: ".process-section .section-label", text: "Cách làm việc" },
-      { selector: ".process-section .section-title", text: "Quy trình 4 bước khi nhận một feature" },
+      {
+        selector: "#experience .section-title",
+        text: "Các cột mốc học tập và thực chiến dự án",
+      },
+      {
+        selector:
+          "#experience .section-head + .timeline + .section-head .section-label",
+        text: "Cách làm việc",
+      },
+      {
+        selector:
+          "#experience .section-head + .timeline + .section-head .section-title",
+        text: "Quy trình 4 bước khi nhận một feature",
+      },
       { selector: "#contact .section-label", text: "Liên hệ" },
-      { selector: "#contact .section-title", text: "Phù hợp vị trí nào, mình có thể trao đổi ngay" },
+      {
+        selector: "#contact .section-title",
+        text: "Phù hợp vị trí nào, mình có thể trao đổi ngay",
+      },
       {
         selector: ".contact-lead",
         text: "Mình ưu tiên vị trí Internship / Junior Frontend. Có thể gửi CV PDF, transcript và walkthrough dự án private qua email theo yêu cầu.",
       },
-      { selector: "#about .about-list li:nth-child(1)", text: "Đọc hiểu codebase nhanh và tự tách task rõ ràng." },
-      { selector: "#about .about-list li:nth-child(2)", text: "Viết UI có structure để người khác maintain được." },
-      { selector: "#about .about-list li:nth-child(3)", text: "Ưu tiên hiệu năng và accessibility ngay từ đầu." },
-      { selector: ".junior-ready-grid .jr-card:nth-child(1) h3", text: "5 real case studies" },
-      { selector: ".junior-ready-grid .jr-card:nth-child(1) p", text: "Có public và private project, trình bày được decision từ problem đến impact." },
-      { selector: ".junior-ready-grid .jr-card:nth-child(2) h3", text: "Product thinking" },
-      { selector: ".junior-ready-grid .jr-card:nth-child(2) p", text: "Luôn đi theo user flow, business constraints và release quality checklist." },
-      { selector: ".junior-ready-grid .jr-card:nth-child(3) h3", text: "UI architecture focus" },
-      { selector: ".junior-ready-grid .jr-card:nth-child(3) p", text: "Xây component system rõ ràng, dễ maintain và dễ onboard trong team." },
-      { selector: ".junior-ready-grid .jr-card:nth-child(4) h3", text: "Ready for code test" },
-      { selector: ".junior-ready-grid .jr-card:nth-child(4) p", text: "Sẵn sàng nhận test task, walkthrough kiến trúc và live coding khi cần." },
+      {
+        selector: "#about .about-list li:nth-child(1)",
+        text: "Đọc hiểu codebase nhanh và tự tách task rõ ràng.",
+      },
+      {
+        selector: "#about .about-list li:nth-child(2)",
+        text: "Viết UI có structure để người khác maintain được.",
+      },
+      {
+        selector: "#about .about-list li:nth-child(3)",
+        text: "Ưu tiên hiệu năng và accessibility ngay từ đầu.",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(1) h3",
+        text: "5 real case studies",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(1) p",
+        text: "Có public và private project, trình bày được decision từ problem đến impact.",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(2) h3",
+        text: "Product thinking",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(2) p",
+        text: "Luôn đi theo user flow, business constraints và release quality checklist.",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(3) h3",
+        text: "UI architecture focus",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(3) p",
+        text: "Xây component system rõ ràng, dễ maintain và dễ onboard trong team.",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(4) h3",
+        text: "Ready for code test",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(4) p",
+        text: "Sẵn sàng nhận test task, walkthrough kiến trúc và live coding khi cần.",
+      },
       { selector: ".github-proof h3", text: "GitHub Proof" },
       {
         selector: ".github-proof p",
         text: "Có thể xem repo highlights và commit history để đánh giá thói quen code, cách đặt tên, structure và khả năng maintain.",
       },
       { selector: ".github-proof a", text: "Xem GitHub và repo nổi bật" },
-      { selector: ".faq-grid .faq-item:nth-child(1) h3", text: "Có thể làm bài test kỹ thuật không?" },
-      { selector: ".faq-grid .faq-item:nth-child(1) p", text: "Có, sẵn sàng làm test task và giải thích approach chi tiết." },
-      { selector: ".faq-grid .faq-item:nth-child(2) h3", text: "Có thể demo project private không?" },
-      { selector: ".faq-grid .faq-item:nth-child(2) p", text: "Có thể demo trực tiếp trong buổi phỏng vấn theo phạm vi NDA." },
-      { selector: ".faq-grid .faq-item:nth-child(3) h3", text: "Có thể làm part-time không?" },
-      { selector: ".faq-grid .faq-item:nth-child(3) p", text: "Có, linh hoạt lịch part-time/full-time theo giai đoạn học kỳ." },
-      { selector: ".skills-grid .skill-card:nth-child(1) h3", text: "Frontend Engineering" },
-      { selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(1)", text: "React, Next.js, TypeScript" },
-      { selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(2)", text: "State management và component architecture" },
-      { selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(3)", text: "Animation có kiểm soát, ưu tiên UX" },
-      { selector: ".skills-grid .skill-card:nth-child(2) h3", text: "UI System & Quality" },
-      { selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(1)", text: "Design tokens, responsive system" },
-      { selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(2)", text: "Accessibility chuẩn thực tế" },
-      { selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(3)", text: "Performance tuning theo Core Web Vitals" },
-      { selector: ".skills-grid .skill-card:nth-child(3) h3", text: "Collaboration" },
-      { selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(1)", text: "Git workflow, review checklist" },
-      { selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(2)", text: "Viết tài liệu kỹ thuật ngắn gọn" },
-      { selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(3)", text: "Làm việc chặt với QA, PM, Designer" },
-      { selector: ".process-grid .process-card:nth-child(1) h3", text: "Hiểu đúng bài toán" },
-      { selector: ".process-grid .process-card:nth-child(1) p", text: "Chốt rõ user flow, success metric, phạm vi và rủi ro." },
-      { selector: ".process-grid .process-card:nth-child(2) h3", text: "Thiết kế kỹ thuật" },
-      { selector: ".process-grid .process-card:nth-child(2) p", text: "Tách component, state, API contract trước khi code." },
-      { selector: ".process-grid .process-card:nth-child(3) h3", text: "Triển khai & review" },
-      { selector: ".process-grid .process-card:nth-child(3) p", text: "Code sạch, test điểm rủi ro cao, review theo checklist." },
-      { selector: ".process-grid .process-card:nth-child(4) h3", text: "Đo lường sau release" },
-      { selector: ".process-grid .process-card:nth-child(4) p", text: "Đọc số liệu thật rồi tối ưu vòng tiếp theo." },
-      { selector: ".timeline .timeline-item:nth-child(1) .timeline-period", text: "2026 - Hiện tại" },
-      { selector: ".timeline .timeline-item:nth-child(1) .timeline-main h3", text: "Sinh viên năm 4 · Xây portfolio hướng tuyển dụng" },
-      { selector: ".timeline .timeline-item:nth-child(1) .timeline-company", text: "Định hướng Frontend / Product Engineering" },
       {
-        selector: ".timeline .timeline-item:nth-child(1) .timeline-main p:nth-of-type(2)",
+        selector: ".faq-grid .faq-item:nth-child(1) h3",
+        text: "Có thể làm bài test kỹ thuật không?",
+      },
+      {
+        selector: ".faq-grid .faq-item:nth-child(1) p",
+        text: "Có, sẵn sàng làm test task và giải thích approach chi tiết.",
+      },
+      {
+        selector: ".faq-grid .faq-item:nth-child(2) h3",
+        text: "Có thể demo project private không?",
+      },
+      {
+        selector: ".faq-grid .faq-item:nth-child(2) p",
+        text: "Có thể demo trực tiếp trong buổi phỏng vấn theo phạm vi NDA.",
+      },
+      {
+        selector: ".faq-grid .faq-item:nth-child(3) h3",
+        text: "Có thể làm part-time không?",
+      },
+      {
+        selector: ".faq-grid .faq-item:nth-child(3) p",
+        text: "Có, linh hoạt lịch part-time/full-time theo giai đoạn học kỳ.",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(1) h3",
+        text: "Frontend Engineering",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(1)",
+        text: "React, Next.js, TypeScript",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(2)",
+        text: "State management và component architecture",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(3)",
+        text: "Animation có kiểm soát, ưu tiên UX",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(2) h3",
+        text: "UI System & Quality",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(1)",
+        text: "Design tokens, responsive system",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(2)",
+        text: "Accessibility chuẩn thực tế",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(3)",
+        text: "Performance tuning theo Core Web Vitals",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(3) h3",
+        text: "Collaboration",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(1)",
+        text: "Git workflow, review checklist",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(2)",
+        text: "Viết tài liệu kỹ thuật ngắn gọn",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(3)",
+        text: "Làm việc chặt với QA, PM, Designer",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(1) h3",
+        text: "Hiểu đúng bài toán",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(1) p",
+        text: "Chốt rõ user flow, success metric, phạm vi và rủi ro.",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(2) h3",
+        text: "Thiết kế kỹ thuật",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(2) p",
+        text: "Tách component, state, API contract trước khi code.",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(3) h3",
+        text: "Triển khai & review",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(3) p",
+        text: "Code sạch, test điểm rủi ro cao, review theo checklist.",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(4) h3",
+        text: "Đo lường sau release",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(4) p",
+        text: "Đọc số liệu thật rồi tối ưu vòng tiếp theo.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(1) .timeline-period",
+        text: "2026 - Hiện tại",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(1) .timeline-main h3",
+        text: "Sinh viên năm 4 · Xây portfolio hướng tuyển dụng",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(1) .timeline-company",
+        text: "Định hướng Frontend / Product Engineering",
+      },
+      {
+        selector:
+          ".timeline .timeline-item:nth-child(1) .timeline-main p:nth-of-type(2)",
         text: "Tập trung hệ thống hóa 5 case study theo chuẩn recruiter: problem, constraints, kiến trúc, kết quả và bài học kỹ thuật.",
       },
-      { selector: ".timeline .timeline-item:nth-child(1) li:nth-child(1)", text: "Chuẩn hóa template case-study cho cả public và private repo." },
-      { selector: ".timeline .timeline-item:nth-child(1) li:nth-child(2)", text: "Rèn khả năng trình bày quyết định kỹ thuật ngắn gọn, rõ ràng." },
-      { selector: ".timeline .timeline-item:nth-child(2) .timeline-period", text: "2025 - 2026" },
-      { selector: ".timeline .timeline-item:nth-child(2) .timeline-main h3", text: "Đồ án và dự án nhóm tại trường" },
-      { selector: ".timeline .timeline-item:nth-child(2) .timeline-company", text: "Team 3-6 thành viên" },
       {
-        selector: ".timeline .timeline-item:nth-child(2) .timeline-main p:nth-of-type(2)",
+        selector: ".timeline .timeline-item:nth-child(1) li:nth-child(1)",
+        text: "Chuẩn hóa template case-study cho cả public và private repo.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(1) li:nth-child(2)",
+        text: "Rèn khả năng trình bày quyết định kỹ thuật ngắn gọn, rõ ràng.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(2) .timeline-period",
+        text: "2025 - 2026",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(2) .timeline-main h3",
+        text: "Đồ án và dự án nhóm tại trường",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(2) .timeline-company",
+        text: "Team 3-6 thành viên",
+      },
+      {
+        selector:
+          ".timeline .timeline-item:nth-child(2) .timeline-main p:nth-of-type(2)",
         text: "Triển khai các dự án có độ phức tạp tăng dần: dashboard, workflow nội bộ, nền tảng y tế, realtime auction.",
       },
-      { selector: ".timeline .timeline-item:nth-child(2) li:nth-child(1)", text: "Xây component tái sử dụng và quy ước code review trong nhóm." },
-      { selector: ".timeline .timeline-item:nth-child(2) li:nth-child(2)", text: "Tự kiểm thử responsive, accessibility và hiệu năng cơ bản." },
-      { selector: ".timeline .timeline-item:nth-child(3) .timeline-period", text: "2023 - 2025" },
-      { selector: ".timeline .timeline-item:nth-child(3) .timeline-main h3", text: "Nền tảng kỹ thuật" },
-      { selector: ".timeline .timeline-item:nth-child(3) .timeline-company", text: "Luyện thuật toán + web fundamentals" },
       {
-        selector: ".timeline .timeline-item:nth-child(3) .timeline-main p:nth-of-type(2)",
+        selector: ".timeline .timeline-item:nth-child(2) li:nth-child(1)",
+        text: "Xây component tái sử dụng và quy ước code review trong nhóm.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(2) li:nth-child(2)",
+        text: "Tự kiểm thử responsive, accessibility và hiệu năng cơ bản.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(3) .timeline-period",
+        text: "2023 - 2025",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(3) .timeline-main h3",
+        text: "Nền tảng kỹ thuật",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(3) .timeline-company",
+        text: "Luyện thuật toán + web fundamentals",
+      },
+      {
+        selector:
+          ".timeline .timeline-item:nth-child(3) .timeline-main p:nth-of-type(2)",
         text: "Rèn nền tảng HTML/CSS/JavaScript, sau đó chuyển sang React và TypeScript để làm các bài toán sản phẩm thực tế hơn.",
       },
-      { selector: ".timeline .timeline-item:nth-child(3) li:nth-child(1)", text: "Thói quen viết code có tổ chức, tách component rõ ràng." },
-      { selector: ".timeline .timeline-item:nth-child(3) li:nth-child(2)", text: "Luyện tư duy phân tích bài toán trước khi code." },
-      { selector: ".project-filters .filter-btn[data-filter=\"all\"]", text: "Tất cả" },
-      { selector: ".project-filters .filter-btn[data-filter=\"frontend\"]", text: "Frontend" },
-      { selector: ".project-filters .filter-btn[data-filter=\"product\"]", text: "Product" },
-      { selector: ".project-filters .filter-btn[data-filter=\"private\"]", text: "Private / NDA" },
+      {
+        selector: ".timeline .timeline-item:nth-child(3) li:nth-child(1)",
+        text: "Thói quen viết code có tổ chức, tách component rõ ràng.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(3) li:nth-child(2)",
+        text: "Luyện tư duy phân tích bài toán trước khi code.",
+      },
+      {
+        selector: '.project-filters .filter-btn[data-filter="all"]',
+        text: "Tất cả",
+      },
+      {
+        selector: '.project-filters .filter-btn[data-filter="frontend"]',
+        text: "Frontend",
+      },
+      {
+        selector: '.project-filters .filter-btn[data-filter="product"]',
+        text: "Product",
+      },
+      {
+        selector: '.project-filters .filter-btn[data-filter="private"]',
+        text: "Private / NDA",
+      },
       {
         selector: ".projects-note",
         html: true,
         text: "Mỗi dự án đều có phần <strong>case study</strong> riêng. Với repo private/NDA, bạn vẫn xem được bối cảnh, kiến trúc, quyết định kỹ thuật và kết quả triển khai.",
       },
-      { selector: ".contact-quick-actions .btn-primary", text: "Đặt lịch phỏng vấn" },
-      { selector: ".contact-quick-actions .btn-secondary", text: "Trao đổi công việc" },
+      {
+        selector: ".contact-quick-actions .btn-primary",
+        text: "Đặt lịch phỏng vấn",
+      },
+      {
+        selector: ".contact-quick-actions .btn-secondary",
+        text: "Trao đổi công việc",
+      },
       { selector: ".contact-list li:nth-child(1) span", text: "Email" },
       { selector: ".contact-list li:nth-child(2) span", text: "Điện thoại" },
       { selector: ".contact-list li:nth-child(3) span", text: "LinkedIn" },
@@ -1238,32 +1530,47 @@
         selector: "#contact-form .form-note",
         text: "Form sẽ mở email client với nội dung đã điền, để đảm bảo bạn gửi đúng người ngay lập tức.",
       },
-      { selector: "#contact-form label[for=\"name\"]", text: "Họ tên" },
-      { selector: "#contact-form label[for=\"email\"]", text: "Email" },
-      { selector: "#contact-form label[for=\"subject\"]", text: "Chủ đề" },
-      { selector: "#contact-form label[for=\"message\"]", text: "Nội dung" },
-      { selector: "#contact-form button[type=\"submit\"]", text: "Mở email để gửi" },
+      { selector: '#contact-form label[for="name"]', text: "Họ tên" },
+      { selector: '#contact-form label[for="email"]', text: "Email" },
+      { selector: '#contact-form label[for="subject"]', text: "Chủ đề" },
+      { selector: '#contact-form label[for="message"]', text: "Nội dung" },
+      {
+        selector: '#contact-form button[type="submit"]',
+        text: "Mở email để gửi",
+      },
       {
         selector: ".site-footer .footer-inner p",
         html: true,
-        text: "© <span id=\"current-year\"></span> Thư High. Portfolio for recruitment.",
+        text: '© <span id="current-year"></span> Thư High. Portfolio for recruitment.',
       },
       { selector: ".site-footer .back-top", text: "Về đầu trang" },
     ],
     en: [
       { selector: "a.skip-link", text: "Skip navigation" },
-      { selector: ".site-nav .nav-link[href=\"#about\"]", text: "About" },
-      { selector: ".site-nav .nav-link[href=\"#skills\"]", text: "Skills" },
-      { selector: ".site-nav .nav-link[href=\"#cv-document\"]", text: "CV" },
-      { selector: ".site-nav .nav-link[href=\"#projects\"]", text: "Projects" },
-      { selector: ".site-nav .nav-link[href=\"#experience\"]", text: "Journey" },
-      { selector: ".site-nav .nav-link[href=\"#contact\"]", text: "Contact" },
-      { selector: "#mobile-menu .mobile-link[href=\"#about\"]", text: "About" },
-      { selector: "#mobile-menu .mobile-link[href=\"#skills\"]", text: "Skills" },
-      { selector: "#mobile-menu .mobile-link[href=\"#cv-document\"]", text: "CV" },
-      { selector: "#mobile-menu .mobile-link[href=\"#projects\"]", text: "Projects" },
-      { selector: "#mobile-menu .mobile-link[href=\"#experience\"]", text: "Journey" },
-      { selector: "#mobile-menu .mobile-link[href=\"#contact\"]", text: "Contact" },
+      { selector: '.site-nav .nav-link[href="#about"]', text: "About" },
+      { selector: '.site-nav .nav-link[href="#skills"]', text: "Skills" },
+      { selector: '.site-nav .nav-link[href="#cv-document"]', text: "CV" },
+      { selector: '.site-nav .nav-link[href="#projects"]', text: "Projects" },
+      { selector: '.site-nav .nav-link[href="#experience"]', text: "Journey" },
+      { selector: '.site-nav .nav-link[href="#contact"]', text: "Contact" },
+      { selector: '#mobile-menu .mobile-link[href="#about"]', text: "About" },
+      { selector: '#mobile-menu .mobile-link[href="#skills"]', text: "Skills" },
+      {
+        selector: '#mobile-menu .mobile-link[href="#cv-document"]',
+        text: "CV",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="#projects"]',
+        text: "Projects",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="#experience"]',
+        text: "Journey",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="#contact"]',
+        text: "Contact",
+      },
       {
         selector: ".hero-content .eyebrow",
         text: "Final-year CS Student · Frontend-focused",
@@ -1271,29 +1578,62 @@
       {
         selector: ".hero-content h1",
         html: true,
-        text: "Junior-ready portfolio: strong design, <span class=\"headline-accent\">solid code</span>, and clear product thinking.",
+        text: 'Junior-ready portfolio: strong design, <span class="headline-accent">solid code</span>, and clear product thinking.',
       },
       {
         selector: ".hero-lead",
         html: true,
         text: "I’m <strong>Thu High</strong>, a final-year CS student focused on Frontend. I build real case studies to prove product delivery skills from UI to logic.",
       },
-      { selector: ".hero-actions .btn-primary", text: "View featured projects" },
+      {
+        selector: ".hero-actions .btn-primary",
+        text: "View featured projects",
+      },
       { selector: ".hero-actions .btn-secondary", text: "View full CV" },
       { selector: ".hero-actions .btn-tertiary", text: "Download CV PDF" },
-      { selector: ".hero-proof-chips span:nth-child(1)", text: "5 case study projects" },
-      { selector: ".hero-proof-chips span:nth-child(2)", text: "Product-thinking frontend" },
-      { selector: ".hero-proof-chips span:nth-child(3)", text: "Private repo friendly" },
-      { selector: ".hero-proof-chips span:nth-child(4)", text: "Interview ready" },
-      { selector: ".quick-contact span:last-child", text: "Seeking Internship / Junior Frontend opportunities" },
+      {
+        selector: ".hero-proof-chips span:nth-child(1)",
+        text: "5 case study projects",
+      },
+      {
+        selector: ".hero-proof-chips span:nth-child(2)",
+        text: "Product-thinking frontend",
+      },
+      {
+        selector: ".hero-proof-chips span:nth-child(3)",
+        text: "Private repo friendly",
+      },
+      {
+        selector: ".hero-proof-chips span:nth-child(4)",
+        text: "Interview ready",
+      },
+      {
+        selector: ".quick-contact span:last-child",
+        text: "Seeking Internship / Junior Frontend opportunities",
+      },
       { selector: ".panel-title", text: "Quick Summary" },
       { selector: ".hero-kpi li:nth-child(1) .kpi-value", text: "Final Year" },
-      { selector: ".hero-kpi li:nth-child(1) .kpi-label", text: "Computer Science Student" },
-      { selector: ".hero-kpi li:nth-child(2) .kpi-value", text: "5 case studies" },
-      { selector: ".hero-kpi li:nth-child(2) .kpi-label", text: "4 public + 1 private/NDA project" },
+      {
+        selector: ".hero-kpi li:nth-child(1) .kpi-label",
+        text: "Computer Science Student",
+      },
+      {
+        selector: ".hero-kpi li:nth-child(2) .kpi-value",
+        text: "5 case studies",
+      },
+      {
+        selector: ".hero-kpi li:nth-child(2) .kpi-label",
+        text: "4 public + 1 private/NDA project",
+      },
       { selector: ".hero-kpi li:nth-child(3) .kpi-value", text: "Core stack" },
-      { selector: ".hero-kpi li:nth-child(3) .kpi-label", text: "React, TypeScript, Next.js, UI System" },
-      { selector: ".availability-text", text: "Available for interview and technical test" },
+      {
+        selector: ".hero-kpi li:nth-child(3) .kpi-label",
+        text: "React, TypeScript, Next.js, UI System",
+      },
+      {
+        selector: ".availability-text",
+        text: "Available for interview and technical test",
+      },
       { selector: ".hero-cv-card .hero-rail-title", text: "Recruiter CV" },
       {
         selector: ".hero-cv-note",
@@ -1303,18 +1643,39 @@
       { selector: ".hero-cv-actions a:nth-child(2)", text: "Download CV PDF" },
       { selector: ".hero-case-rail .hero-rail-title", text: "Case Preview" },
       { selector: "#cv-document .section-label", text: "Full CV" },
-      { selector: "#cv-document .section-title", text: "Recruiter-ready CV available instantly" },
+      {
+        selector: "#cv-document .section-title",
+        text: "Recruiter-ready CV available instantly",
+      },
       {
         selector: "#cv-document .section-subtitle",
         text: "This CV contains key hiring information. Open it online or download PDF directly.",
       },
       { selector: ".lane-card .section-label", text: "Recruiter Fast Lane" },
-      { selector: ".trust-item:nth-child(1) h2", text: "Project-first mindset" },
-      { selector: ".trust-item:nth-child(1) p", text: "Always start from concrete problems and measurable outcomes." },
-      { selector: ".trust-item:nth-child(2) h2", text: "Clean, structured code" },
-      { selector: ".trust-item:nth-child(2) p", text: "Prioritize maintainability, reviewability, and scalability." },
-      { selector: ".trust-item:nth-child(3) h2", text: "Strong team collaboration" },
-      { selector: ".trust-item:nth-child(3) p", text: "Clear communication, fast feedback loops, and rapid iteration." },
+      {
+        selector: ".trust-item:nth-child(1) h3",
+        text: "Project-first mindset",
+      },
+      {
+        selector: ".trust-item:nth-child(1) p",
+        text: "Always start from concrete problems and measurable outcomes.",
+      },
+      {
+        selector: ".trust-item:nth-child(2) h3",
+        text: "Clean, structured code",
+      },
+      {
+        selector: ".trust-item:nth-child(2) p",
+        text: "Prioritize maintainability, reviewability, and scalability.",
+      },
+      {
+        selector: ".trust-item:nth-child(3) h3",
+        text: "Strong team collaboration",
+      },
+      {
+        selector: ".trust-item:nth-child(3) p",
+        text: "Clear communication, fast feedback loops, and rapid iteration.",
+      },
       { selector: ".lane-card h2", text: "Scan this profile in 60 seconds" },
       {
         selector: ".lane-card > div p:last-of-type",
@@ -1322,9 +1683,15 @@
       },
       { selector: ".lane-links a:nth-child(1)", text: "1. Full CV" },
       { selector: ".lane-links a:nth-child(2)", text: "2. Case Studies" },
-      { selector: ".lane-links a:nth-child(3)", text: "3. Contact / Interview" },
+      {
+        selector: ".lane-links a:nth-child(3)",
+        text: "3. Contact / Interview",
+      },
       { selector: "#about .section-label", text: "About" },
-      { selector: "#about .section-title", text: "What can a final-year student contribute right away?" },
+      {
+        selector: "#about .section-title",
+        text: "What can a final-year student contribute right away?",
+      },
       {
         selector: "#about .about-content p:nth-child(1)",
         text: "I do not use this portfolio as decoration. Each project shows context, constraints, technical decisions, and real outcomes.",
@@ -1334,116 +1701,330 @@
         text: "In a team, I can handle production-level frontend tasks: building maintainable components, integrating APIs, improving UX, and fixing UI issues with clear quality checklists.",
       },
       { selector: "#resume .section-label", text: "CV Snapshot" },
-      { selector: "#resume .section-title", text: "CV information recruiters need in 30 seconds" },
+      {
+        selector: "#resume .section-title",
+        text: "CV information recruiters need in 30 seconds",
+      },
       { selector: "#fit .section-label", text: "JD Fit" },
-      { selector: "#fit .section-title", text: "Fit for Internship / Junior Frontend roles" },
+      {
+        selector: "#fit .section-title",
+        text: "Fit for Internship / Junior Frontend roles",
+      },
       {
         selector: "#fit .section-subtitle",
         text: "This matrix helps recruiters map JD expectations to concrete case-study evidence.",
       },
-      { selector: "#junior-ready .section-label", text: "Why I’m Junior-Ready" },
-      { selector: "#junior-ready .section-title", text: "Why I can contribute from the first sprint" },
+      {
+        selector:
+          "#fit .section-head + .fit-grid + .section-head .section-label",
+        text: "Why I’m Junior-Ready",
+      },
+      {
+        selector:
+          "#fit .section-head + .fit-grid + .section-head .section-title",
+        text: "Why I can contribute from the first sprint",
+      },
       { selector: "#faq .section-label", text: "Recruiter FAQ" },
       { selector: "#faq .section-title", text: "Common recruiter questions" },
       { selector: "#skills .section-label", text: "Skills" },
-      { selector: "#skills .section-title", text: "Stack focused for product environments" },
+      {
+        selector: "#skills .section-title",
+        text: "Stack focused for product environments",
+      },
       { selector: "#projects .section-label", text: "Projects" },
-      { selector: "#projects .section-title", text: "Case studies for recruiters" },
+      {
+        selector: "#projects .section-title",
+        text: "Case studies for recruiters",
+      },
       {
         selector: "#projects .section-subtitle",
         text: "Focused on problem, solution, and impact. No unnecessary visual noise.",
       },
       { selector: "#experience .section-label", text: "Journey" },
-      { selector: "#experience .section-title", text: "Learning and project execution milestones" },
-      { selector: ".process-section .section-label", text: "Work Process" },
-      { selector: ".process-section .section-title", text: "My 4-step process for shipping a feature" },
+      {
+        selector: "#experience .section-title",
+        text: "Learning and project execution milestones",
+      },
+      {
+        selector:
+          "#experience .section-head + .timeline + .section-head .section-label",
+        text: "Work Process",
+      },
+      {
+        selector:
+          "#experience .section-head + .timeline + .section-head .section-title",
+        text: "My 4-step process for shipping a feature",
+      },
       { selector: "#contact .section-label", text: "Contact" },
-      { selector: "#contact .section-title", text: "If the role fits, we can discuss immediately" },
+      {
+        selector: "#contact .section-title",
+        text: "If the role fits, we can discuss immediately",
+      },
       {
         selector: ".contact-lead",
         text: "I’m seeking Internship / Junior Frontend roles. CV PDF, transcript, and private-project walkthrough can be shared by email.",
       },
-      { selector: "#about .about-list li:nth-child(1)", text: "I can read existing codebases quickly and break tasks down clearly." },
-      { selector: "#about .about-list li:nth-child(2)", text: "I build structured UI components that others can maintain easily." },
-      { selector: "#about .about-list li:nth-child(3)", text: "I prioritize performance and accessibility from the start." },
-      { selector: ".junior-ready-grid .jr-card:nth-child(1) h3", text: "5 real case studies" },
-      { selector: ".junior-ready-grid .jr-card:nth-child(1) p", text: "Public and private projects with clear narrative from problem to impact." },
-      { selector: ".junior-ready-grid .jr-card:nth-child(2) h3", text: "Product thinking" },
-      { selector: ".junior-ready-grid .jr-card:nth-child(2) p", text: "I work from user flow, business constraints, and release quality checklists." },
-      { selector: ".junior-ready-grid .jr-card:nth-child(3) h3", text: "UI architecture focus" },
-      { selector: ".junior-ready-grid .jr-card:nth-child(3) p", text: "I build maintainable component systems that support team onboarding." },
-      { selector: ".junior-ready-grid .jr-card:nth-child(4) h3", text: "Ready for code test" },
-      { selector: ".junior-ready-grid .jr-card:nth-child(4) p", text: "Available for test tasks, architecture walkthroughs, and live coding." },
+      {
+        selector: "#about .about-list li:nth-child(1)",
+        text: "I can read existing codebases quickly and break tasks down clearly.",
+      },
+      {
+        selector: "#about .about-list li:nth-child(2)",
+        text: "I build structured UI components that others can maintain easily.",
+      },
+      {
+        selector: "#about .about-list li:nth-child(3)",
+        text: "I prioritize performance and accessibility from the start.",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(1) h3",
+        text: "5 real case studies",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(1) p",
+        text: "Public and private projects with clear narrative from problem to impact.",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(2) h3",
+        text: "Product thinking",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(2) p",
+        text: "I work from user flow, business constraints, and release quality checklists.",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(3) h3",
+        text: "UI architecture focus",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(3) p",
+        text: "I build maintainable component systems that support team onboarding.",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(4) h3",
+        text: "Ready for code test",
+      },
+      {
+        selector: ".junior-ready-grid .jr-card:nth-child(4) p",
+        text: "Available for test tasks, architecture walkthroughs, and live coding.",
+      },
       { selector: ".github-proof h3", text: "GitHub Proof" },
       {
         selector: ".github-proof p",
         text: "Review repo highlights and commit history to evaluate naming, structure, and maintainability habits.",
       },
-      { selector: ".github-proof a", text: "View GitHub contributions & repo highlights" },
-      { selector: ".faq-grid .faq-item:nth-child(1) h3", text: "Can you take a technical test?" },
-      { selector: ".faq-grid .faq-item:nth-child(1) p", text: "Yes. I can complete a test task and explain my approach in detail." },
-      { selector: ".faq-grid .faq-item:nth-child(2) h3", text: "Can you demo private projects?" },
-      { selector: ".faq-grid .faq-item:nth-child(2) p", text: "Yes. I can provide a live private walkthrough within NDA scope." },
-      { selector: ".faq-grid .faq-item:nth-child(3) h3", text: "Are you available part-time?" },
-      { selector: ".faq-grid .faq-item:nth-child(3) p", text: "Yes. Flexible part-time/full-time schedule depending on semester timing." },
-      { selector: ".skills-grid .skill-card:nth-child(1) h3", text: "Frontend Engineering" },
-      { selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(1)", text: "React, Next.js, TypeScript" },
-      { selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(2)", text: "State management and component architecture" },
-      { selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(3)", text: "Controlled animation with UX-first priorities" },
-      { selector: ".skills-grid .skill-card:nth-child(2) h3", text: "UI System & Quality" },
-      { selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(1)", text: "Design tokens and responsive systems" },
-      { selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(2)", text: "Practical accessibility standards" },
-      { selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(3)", text: "Performance tuning via Core Web Vitals" },
-      { selector: ".skills-grid .skill-card:nth-child(3) h3", text: "Collaboration" },
-      { selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(1)", text: "Git workflow and review checklist" },
-      { selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(2)", text: "Concise technical documentation" },
-      { selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(3)", text: "Tight collaboration with QA, PM, and Designer" },
-      { selector: ".process-grid .process-card:nth-child(1) h3", text: "Clarify the problem" },
-      { selector: ".process-grid .process-card:nth-child(1) p", text: "Align user flow, success metrics, scope, and risk upfront." },
-      { selector: ".process-grid .process-card:nth-child(2) h3", text: "Design the technical plan" },
-      { selector: ".process-grid .process-card:nth-child(2) p", text: "Split components, state, and API contract before coding." },
-      { selector: ".process-grid .process-card:nth-child(3) h3", text: "Implement & review" },
-      { selector: ".process-grid .process-card:nth-child(3) p", text: "Write clean code, test risk points, and review with checklists." },
-      { selector: ".process-grid .process-card:nth-child(4) h3", text: "Measure after release" },
-      { selector: ".process-grid .process-card:nth-child(4) p", text: "Read real metrics and iterate in the next cycle." },
-      { selector: ".timeline .timeline-item:nth-child(1) .timeline-period", text: "2026 - Present" },
-      { selector: ".timeline .timeline-item:nth-child(1) .timeline-main h3", text: "Final-year student · Building a recruiter-focused portfolio" },
-      { selector: ".timeline .timeline-item:nth-child(1) .timeline-company", text: "Frontend / Product Engineering direction" },
       {
-        selector: ".timeline .timeline-item:nth-child(1) .timeline-main p:nth-of-type(2)",
+        selector: ".github-proof a",
+        text: "View GitHub contributions & repo highlights",
+      },
+      {
+        selector: ".faq-grid .faq-item:nth-child(1) h3",
+        text: "Can you take a technical test?",
+      },
+      {
+        selector: ".faq-grid .faq-item:nth-child(1) p",
+        text: "Yes. I can complete a test task and explain my approach in detail.",
+      },
+      {
+        selector: ".faq-grid .faq-item:nth-child(2) h3",
+        text: "Can you demo private projects?",
+      },
+      {
+        selector: ".faq-grid .faq-item:nth-child(2) p",
+        text: "Yes. I can provide a live private walkthrough within NDA scope.",
+      },
+      {
+        selector: ".faq-grid .faq-item:nth-child(3) h3",
+        text: "Are you available part-time?",
+      },
+      {
+        selector: ".faq-grid .faq-item:nth-child(3) p",
+        text: "Yes. Flexible part-time/full-time schedule depending on semester timing.",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(1) h3",
+        text: "Frontend Engineering",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(1)",
+        text: "React, Next.js, TypeScript",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(2)",
+        text: "State management and component architecture",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(1) li:nth-child(3)",
+        text: "Controlled animation with UX-first priorities",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(2) h3",
+        text: "UI System & Quality",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(1)",
+        text: "Design tokens and responsive systems",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(2)",
+        text: "Practical accessibility standards",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(2) li:nth-child(3)",
+        text: "Performance tuning via Core Web Vitals",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(3) h3",
+        text: "Collaboration",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(1)",
+        text: "Git workflow and review checklist",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(2)",
+        text: "Concise technical documentation",
+      },
+      {
+        selector: ".skills-grid .skill-card:nth-child(3) li:nth-child(3)",
+        text: "Tight collaboration with QA, PM, and Designer",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(1) h3",
+        text: "Clarify the problem",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(1) p",
+        text: "Align user flow, success metrics, scope, and risk upfront.",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(2) h3",
+        text: "Design the technical plan",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(2) p",
+        text: "Split components, state, and API contract before coding.",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(3) h3",
+        text: "Implement & review",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(3) p",
+        text: "Write clean code, test risk points, and review with checklists.",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(4) h3",
+        text: "Measure after release",
+      },
+      {
+        selector: ".process-grid .process-card:nth-child(4) p",
+        text: "Read real metrics and iterate in the next cycle.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(1) .timeline-period",
+        text: "2026 - Present",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(1) .timeline-main h3",
+        text: "Final-year student · Building a recruiter-focused portfolio",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(1) .timeline-company",
+        text: "Frontend / Product Engineering direction",
+      },
+      {
+        selector:
+          ".timeline .timeline-item:nth-child(1) .timeline-main p:nth-of-type(2)",
         text: "Structured 5 case studies using recruiter-friendly format: problem, constraints, architecture, impact, and technical lessons.",
       },
-      { selector: ".timeline .timeline-item:nth-child(1) li:nth-child(1)", text: "Standardized case-study templates for both public and private repos." },
-      { selector: ".timeline .timeline-item:nth-child(1) li:nth-child(2)", text: "Practiced concise and defensible technical decision communication." },
-      { selector: ".timeline .timeline-item:nth-child(2) .timeline-period", text: "2025 - 2026" },
-      { selector: ".timeline .timeline-item:nth-child(2) .timeline-main h3", text: "Capstone and team projects at university" },
-      { selector: ".timeline .timeline-item:nth-child(2) .timeline-company", text: "3-6 member teams" },
       {
-        selector: ".timeline .timeline-item:nth-child(2) .timeline-main p:nth-of-type(2)",
+        selector: ".timeline .timeline-item:nth-child(1) li:nth-child(1)",
+        text: "Standardized case-study templates for both public and private repos.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(1) li:nth-child(2)",
+        text: "Practiced concise and defensible technical decision communication.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(2) .timeline-period",
+        text: "2025 - 2026",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(2) .timeline-main h3",
+        text: "Capstone and team projects at university",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(2) .timeline-company",
+        text: "3-6 member teams",
+      },
+      {
+        selector:
+          ".timeline .timeline-item:nth-child(2) .timeline-main p:nth-of-type(2)",
         text: "Delivered increasingly complex projects: dashboards, internal workflows, healthcare platform, and realtime auction system.",
       },
-      { selector: ".timeline .timeline-item:nth-child(2) li:nth-child(1)", text: "Built reusable components and shared code-review conventions." },
-      { selector: ".timeline .timeline-item:nth-child(2) li:nth-child(2)", text: "Performed practical checks for responsive behavior, accessibility, and baseline performance." },
-      { selector: ".timeline .timeline-item:nth-child(3) .timeline-period", text: "2023 - 2025" },
-      { selector: ".timeline .timeline-item:nth-child(3) .timeline-main h3", text: "Technical foundation" },
-      { selector: ".timeline .timeline-item:nth-child(3) .timeline-company", text: "Algorithms + web fundamentals" },
       {
-        selector: ".timeline .timeline-item:nth-child(3) .timeline-main p:nth-of-type(2)",
+        selector: ".timeline .timeline-item:nth-child(2) li:nth-child(1)",
+        text: "Built reusable components and shared code-review conventions.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(2) li:nth-child(2)",
+        text: "Performed practical checks for responsive behavior, accessibility, and baseline performance.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(3) .timeline-period",
+        text: "2023 - 2025",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(3) .timeline-main h3",
+        text: "Technical foundation",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(3) .timeline-company",
+        text: "Algorithms + web fundamentals",
+      },
+      {
+        selector:
+          ".timeline .timeline-item:nth-child(3) .timeline-main p:nth-of-type(2)",
         text: "Built strong HTML/CSS/JavaScript fundamentals, then moved to React and TypeScript for real product-oriented problems.",
       },
-      { selector: ".timeline .timeline-item:nth-child(3) li:nth-child(1)", text: "Developed disciplined code structure and component separation habits." },
-      { selector: ".timeline .timeline-item:nth-child(3) li:nth-child(2)", text: "Practiced problem analysis before implementation." },
-      { selector: ".project-filters .filter-btn[data-filter=\"all\"]", text: "All" },
-      { selector: ".project-filters .filter-btn[data-filter=\"frontend\"]", text: "Frontend" },
-      { selector: ".project-filters .filter-btn[data-filter=\"product\"]", text: "Product" },
-      { selector: ".project-filters .filter-btn[data-filter=\"private\"]", text: "Private / NDA" },
+      {
+        selector: ".timeline .timeline-item:nth-child(3) li:nth-child(1)",
+        text: "Developed disciplined code structure and component separation habits.",
+      },
+      {
+        selector: ".timeline .timeline-item:nth-child(3) li:nth-child(2)",
+        text: "Practiced problem analysis before implementation.",
+      },
+      {
+        selector: '.project-filters .filter-btn[data-filter="all"]',
+        text: "All",
+      },
+      {
+        selector: '.project-filters .filter-btn[data-filter="frontend"]',
+        text: "Frontend",
+      },
+      {
+        selector: '.project-filters .filter-btn[data-filter="product"]',
+        text: "Product",
+      },
+      {
+        selector: '.project-filters .filter-btn[data-filter="private"]',
+        text: "Private / NDA",
+      },
       {
         selector: ".projects-note",
         html: true,
         text: "Each project has a dedicated <strong>case study</strong>. For private/NDA repos, you can still review context, architecture, technical decisions, and outcomes.",
       },
-      { selector: ".contact-quick-actions .btn-primary", text: "Schedule interview" },
-      { selector: ".contact-quick-actions .btn-secondary", text: "Discuss opportunities" },
+      {
+        selector: ".contact-quick-actions .btn-primary",
+        text: "Schedule interview",
+      },
+      {
+        selector: ".contact-quick-actions .btn-secondary",
+        text: "Discuss opportunities",
+      },
       { selector: ".contact-list li:nth-child(1) span", text: "Email" },
       { selector: ".contact-list li:nth-child(2) span", text: "Phone" },
       { selector: ".contact-list li:nth-child(3) span", text: "LinkedIn" },
@@ -1453,15 +2034,18 @@
         selector: "#contact-form .form-note",
         text: "This form opens your email client with prefilled content, so you can reach me directly.",
       },
-      { selector: "#contact-form label[for=\"name\"]", text: "Name" },
-      { selector: "#contact-form label[for=\"email\"]", text: "Email" },
-      { selector: "#contact-form label[for=\"subject\"]", text: "Subject" },
-      { selector: "#contact-form label[for=\"message\"]", text: "Message" },
-      { selector: "#contact-form button[type=\"submit\"]", text: "Open email draft" },
+      { selector: '#contact-form label[for="name"]', text: "Name" },
+      { selector: '#contact-form label[for="email"]', text: "Email" },
+      { selector: '#contact-form label[for="subject"]', text: "Subject" },
+      { selector: '#contact-form label[for="message"]', text: "Message" },
+      {
+        selector: '#contact-form button[type="submit"]',
+        text: "Open email draft",
+      },
       {
         selector: ".site-footer .footer-inner p",
         html: true,
-        text: "© <span id=\"current-year\"></span> Thu High. Portfolio for recruitment.",
+        text: '© <span id="current-year"></span> Thu High. Portfolio for recruitment.',
       },
       { selector: ".site-footer .back-top", text: "Back to top" },
     ],
@@ -1470,32 +2054,80 @@
   const PROJECT_TRANSLATIONS = {
     vi: [
       { selector: "a.skip-link", text: "Bỏ qua điều hướng" },
-      { selector: ".site-nav .nav-link[href=\"index.html#projects\"]", text: "Quay lại dự án" },
-      { selector: ".site-nav .nav-link[href=\"index.html#contact\"]", text: "Liên hệ" },
-      { selector: "#mobile-menu .mobile-link[href=\"index.html#home\"]", text: "Trang chủ" },
-      { selector: "#mobile-menu .mobile-link[href=\"index.html#projects\"]", text: "Quay lại dự án" },
-      { selector: "#mobile-menu .mobile-link[href=\"index.html#contact\"]", text: "Liên hệ" },
+      {
+        selector: '.site-nav .nav-link[href="index.html#projects"]',
+        text: "Quay lại dự án",
+      },
+      {
+        selector: '.site-nav .nav-link[href="index.html#contact"]',
+        text: "Liên hệ",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="index.html#home"]',
+        text: "Trang chủ",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="index.html#projects"]',
+        text: "Quay lại dự án",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="index.html#contact"]',
+        text: "Liên hệ",
+      },
       { selector: ".project-back-link", text: "← Quay lại danh sách dự án" },
-      { selector: ".project-case-nav a[href=\"#case-overview\"]", text: "Tổng quan" },
-      { selector: ".project-case-nav a[href=\"#case-story\"]", text: "Story" },
-      { selector: ".project-case-nav a[href=\"#case-details\"]", text: "Chi tiết kỹ thuật" },
-      { selector: ".project-case-nav a[href=\"#case-media\"]", text: "Media" },
-      { selector: ".project-case-nav a[href=\"#case-proof\"]", text: "Kết quả" },
-      { selector: ".project-case-nav a[href=\"#case-security\"]", text: "NDA" },
+      {
+        selector: '.project-case-nav a[href="#case-overview"]',
+        text: "Tổng quan",
+      },
+      { selector: '.project-case-nav a[href="#case-story"]', text: "Story" },
+      {
+        selector: '.project-case-nav a[href="#case-details"]',
+        text: "Chi tiết kỹ thuật",
+      },
+      { selector: '.project-case-nav a[href="#case-media"]', text: "Media" },
+      { selector: '.project-case-nav a[href="#case-proof"]', text: "Kết quả" },
+      { selector: '.project-case-nav a[href="#case-security"]', text: "NDA" },
       { selector: "#case-story article:nth-child(1) h2", text: "Vấn đề" },
       { selector: "#case-story article:nth-child(2) h2", text: "Giải pháp" },
       { selector: "#case-story article:nth-child(3) h2", text: "Tác động" },
       { selector: "#case-media article:nth-child(1) h2", text: "Video demo" },
-      { selector: "#case-media article:nth-child(2) h2", text: "Ảnh minh hoạ chính" },
-      { selector: "#case-details article:nth-child(1) h2", text: "Sơ đồ kiến trúc" },
-      { selector: "#case-details article:nth-child(2) h2", text: "Kiến trúc UI & luồng dữ liệu" },
-      { selector: "#case-details article:nth-child(3) h2", text: "Quyết định kỹ thuật" },
-      { selector: "#case-details article:nth-child(4) h2", text: "Phần tôi trực tiếp phụ trách" },
-      { selector: "#case-details article:nth-child(5) h2", text: "Artifacts có thể chia sẻ" },
-      { selector: "#case-details article:nth-child(6) h2", text: "Thách thức kỹ thuật" },
-      { selector: "#case-details article:nth-child(7) h2", text: "Bài học rút ra" },
+      {
+        selector: "#case-media article:nth-child(2) h2",
+        text: "Ảnh minh hoạ chính",
+      },
+      {
+        selector: "#case-details article:nth-child(1) h2",
+        text: "Sơ đồ kiến trúc",
+      },
+      {
+        selector: "#case-details article:nth-child(2) h2",
+        text: "Kiến trúc UI & luồng dữ liệu",
+      },
+      {
+        selector: "#case-details article:nth-child(3) h2",
+        text: "Quyết định kỹ thuật",
+      },
+      {
+        selector: "#case-details article:nth-child(4) h2",
+        text: "Phần tôi trực tiếp phụ trách",
+      },
+      {
+        selector: "#case-details article:nth-child(5) h2",
+        text: "Artifacts có thể chia sẻ",
+      },
+      {
+        selector: "#case-details article:nth-child(6) h2",
+        text: "Thách thức kỹ thuật",
+      },
+      {
+        selector: "#case-details article:nth-child(7) h2",
+        text: "Bài học rút ra",
+      },
       { selector: "#case-security h2", text: "Phạm vi bảo mật / NDA" },
-      { selector: ".project-footer-cta .btn-secondary", text: "Quay lại portfolio" },
+      {
+        selector: ".project-footer-cta .btn-secondary",
+        text: "Quay lại portfolio",
+      },
       {
         selector: ".project-footer-cta .btn-primary",
         text: "Yêu cầu demo riêng / phỏng vấn kỹ thuật",
@@ -1503,38 +2135,89 @@
       {
         selector: ".site-footer .footer-inner p",
         html: true,
-        text: "© <span id=\"current-year\"></span> Thư High. Case Study.",
+        text: '© <span id="current-year"></span> Thư High. Case Study.',
       },
       { selector: ".site-footer .back-top", text: "Về trang chính" },
     ],
     en: [
       { selector: "a.skip-link", text: "Skip navigation" },
-      { selector: ".site-nav .nav-link[href=\"index.html#projects\"]", text: "Back to Projects" },
-      { selector: ".site-nav .nav-link[href=\"index.html#contact\"]", text: "Contact" },
-      { selector: "#mobile-menu .mobile-link[href=\"index.html#home\"]", text: "Home" },
-      { selector: "#mobile-menu .mobile-link[href=\"index.html#projects\"]", text: "Back to Projects" },
-      { selector: "#mobile-menu .mobile-link[href=\"index.html#contact\"]", text: "Contact" },
+      {
+        selector: '.site-nav .nav-link[href="index.html#projects"]',
+        text: "Back to Projects",
+      },
+      {
+        selector: '.site-nav .nav-link[href="index.html#contact"]',
+        text: "Contact",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="index.html#home"]',
+        text: "Home",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="index.html#projects"]',
+        text: "Back to Projects",
+      },
+      {
+        selector: '#mobile-menu .mobile-link[href="index.html#contact"]',
+        text: "Contact",
+      },
       { selector: ".project-back-link", text: "← Back to project list" },
-      { selector: ".project-case-nav a[href=\"#case-overview\"]", text: "Overview" },
-      { selector: ".project-case-nav a[href=\"#case-story\"]", text: "Story" },
-      { selector: ".project-case-nav a[href=\"#case-details\"]", text: "Technical Details" },
-      { selector: ".project-case-nav a[href=\"#case-media\"]", text: "Media" },
-      { selector: ".project-case-nav a[href=\"#case-proof\"]", text: "Results" },
-      { selector: ".project-case-nav a[href=\"#case-security\"]", text: "NDA" },
+      {
+        selector: '.project-case-nav a[href="#case-overview"]',
+        text: "Overview",
+      },
+      { selector: '.project-case-nav a[href="#case-story"]', text: "Story" },
+      {
+        selector: '.project-case-nav a[href="#case-details"]',
+        text: "Technical Details",
+      },
+      { selector: '.project-case-nav a[href="#case-media"]', text: "Media" },
+      { selector: '.project-case-nav a[href="#case-proof"]', text: "Results" },
+      { selector: '.project-case-nav a[href="#case-security"]', text: "NDA" },
       { selector: "#case-story article:nth-child(1) h2", text: "Problem" },
       { selector: "#case-story article:nth-child(2) h2", text: "Solution" },
       { selector: "#case-story article:nth-child(3) h2", text: "Impact" },
-      { selector: "#case-media article:nth-child(1) h2", text: "Video Walkthrough" },
-      { selector: "#case-media article:nth-child(2) h2", text: "Key Screenshots" },
-      { selector: "#case-details article:nth-child(1) h2", text: "Architecture Diagram" },
-      { selector: "#case-details article:nth-child(2) h2", text: "UI Architecture & Data Flow" },
-      { selector: "#case-details article:nth-child(3) h2", text: "Technical Decisions" },
-      { selector: "#case-details article:nth-child(4) h2", text: "My Ownership Scope" },
-      { selector: "#case-details article:nth-child(5) h2", text: "Shareable Artifacts" },
-      { selector: "#case-details article:nth-child(6) h2", text: "Engineering Challenges" },
-      { selector: "#case-details article:nth-child(7) h2", text: "Lessons Learned" },
+      {
+        selector: "#case-media article:nth-child(1) h2",
+        text: "Video Walkthrough",
+      },
+      {
+        selector: "#case-media article:nth-child(2) h2",
+        text: "Key Screenshots",
+      },
+      {
+        selector: "#case-details article:nth-child(1) h2",
+        text: "Architecture Diagram",
+      },
+      {
+        selector: "#case-details article:nth-child(2) h2",
+        text: "UI Architecture & Data Flow",
+      },
+      {
+        selector: "#case-details article:nth-child(3) h2",
+        text: "Technical Decisions",
+      },
+      {
+        selector: "#case-details article:nth-child(4) h2",
+        text: "My Ownership Scope",
+      },
+      {
+        selector: "#case-details article:nth-child(5) h2",
+        text: "Shareable Artifacts",
+      },
+      {
+        selector: "#case-details article:nth-child(6) h2",
+        text: "Engineering Challenges",
+      },
+      {
+        selector: "#case-details article:nth-child(7) h2",
+        text: "Lessons Learned",
+      },
       { selector: "#case-security h2", text: "Security Scope / NDA" },
-      { selector: ".project-footer-cta .btn-secondary", text: "Back to portfolio" },
+      {
+        selector: ".project-footer-cta .btn-secondary",
+        text: "Back to portfolio",
+      },
       {
         selector: ".project-footer-cta .btn-primary",
         text: "Request private demo / technical interview",
@@ -1542,7 +2225,7 @@
       {
         selector: ".site-footer .footer-inner p",
         html: true,
-        text: "© <span id=\"current-year\"></span> Thu High. Case Study.",
+        text: '© <span id="current-year"></span> Thu High. Case Study.',
       },
       { selector: ".site-footer .back-top", text: "Back to home" },
     ],
@@ -1566,7 +2249,8 @@
       meta: override.meta || base.meta,
       proof: override.proof || base.proof,
       architecture: override.architecture || base.architecture,
-      technicalDecisions: override.technicalDecisions || base.technicalDecisions,
+      technicalDecisions:
+        override.technicalDecisions || base.technicalDecisions,
       impact: override.impact || base.impact,
       roleScope: override.roleScope || base.roleScope,
       evidence: override.evidence || base.evidence,
@@ -1612,7 +2296,9 @@
   };
 
   const updateProjectLinksByLanguage = () => {
-    const links = Array.from(document.querySelectorAll('a[href^="project.html"]'));
+    const links = Array.from(
+      document.querySelectorAll('a[href^="project.html"]'),
+    );
     if (!links.length) return;
 
     links.forEach((link) => {
@@ -1628,7 +2314,10 @@
 
       const query = url.searchParams.toString();
       const hash = url.hash || "";
-      link.setAttribute("href", `project.html${query ? `?${query}` : ""}${hash}`);
+      link.setAttribute(
+        "href",
+        `project.html${query ? `?${query}` : ""}${hash}`,
+      );
     });
   };
 
@@ -1641,7 +2330,10 @@
     }
 
     if (themeToggle) {
-      const label = currentLanguage === "en" ? "Toggle light/dark theme" : "Đổi giao diện sáng/tối";
+      const label =
+        currentLanguage === "en"
+          ? "Toggle light/dark theme"
+          : "Đổi giao diện sáng/tối";
       themeToggle.setAttribute("aria-label", label);
       const text = themeToggle.querySelector(".theme-text");
       if (text) {
@@ -1662,7 +2354,10 @@
 
     if (menuToggle) {
       const isOpen = mobileMenu?.classList.contains("is-open");
-      menuToggle.setAttribute("aria-label", isOpen ? t("menuClose") : t("menuOpen"));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? t("menuClose") : t("menuOpen"),
+      );
     }
 
     document.documentElement.lang = currentLanguage === "en" ? "en" : "vi";
@@ -1749,7 +2444,10 @@
     mobileMenu.classList.toggle("is-open", isOpen);
     menuToggle.classList.toggle("is-open", isOpen);
     menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    menuToggle.setAttribute("aria-label", isOpen ? t("menuClose") : t("menuOpen"));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? t("menuClose") : t("menuOpen"),
+    );
     document.body.classList.toggle("mobile-menu-open", isOpen);
   };
 
@@ -2031,7 +2729,9 @@
   };
 
   const extractStackFromMeta = (detail) => {
-    const stackItem = (detail.meta || []).find((item) => item.startsWith("Stack:"));
+    const stackItem = (detail.meta || []).find((item) =>
+      item.startsWith("Stack:"),
+    );
     if (!stackItem) return t("stackFallback");
     return stackItem.replace(/^Stack:\s*/, "").replace(/\s*\+\s*/g, " · ");
   };
@@ -2117,11 +2817,13 @@
 
       const points = document.createElement("ul");
       points.className = "project-points";
-      (detail.impact || detail.technicalDecisions || []).slice(0, 3).forEach((item) => {
-        const li = document.createElement("li");
-        li.textContent = item;
-        points.appendChild(li);
-      });
+      (detail.impact || detail.technicalDecisions || [])
+        .slice(0, 3)
+        .forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          points.appendChild(li);
+        });
 
       const stack = document.createElement("div");
       stack.className = "project-stack";
@@ -2198,7 +2900,8 @@
       fallback.className = "proof-item";
 
       const value = document.createElement("strong");
-      value.textContent = currentLanguage === "en" ? "Case Study" : "Case Study";
+      value.textContent =
+        currentLanguage === "en" ? "Case Study" : "Case Study";
       const label = document.createElement("span");
       label.textContent =
         currentLanguage === "en"
@@ -2378,7 +3081,9 @@
 
         const strong = document.createElement("strong");
         strong.textContent =
-          currentLanguage === "en" ? "Video not publicly available" : "Video không public";
+          currentLanguage === "en"
+            ? "Video not publicly available"
+            : "Video không public";
         const note = document.createElement("span");
         note.textContent =
           currentLanguage === "en"

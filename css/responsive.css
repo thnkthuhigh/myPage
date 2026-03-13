@@ -47,6 +47,10 @@
     grid-template-columns: 1fr;
   }
 
+  .trust-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .snapshot-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -140,7 +144,10 @@
     visibility: hidden;
     pointer-events: none;
     transform: translateY(-10px);
-    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+    transition:
+      opacity 0.22s ease,
+      transform 0.22s ease,
+      visibility 0.22s ease;
   }
 
   .mobile-menu.is-open {
@@ -510,4 +517,3 @@
     transform: none !important;
   }
 }
-

@@ -240,7 +240,9 @@ a {
   color: var(--signature-color);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
   transform: translateY(-1px);
-  transition: color 0.22s ease, transform 0.22s ease;
+  transition:
+    color 0.22s ease,
+    transform 0.22s ease;
 }
 
 .brand:hover .brand-signature {
@@ -756,6 +758,7 @@ h1 {
 }
 
 .trust-items {
+  margin-top: 22px;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--bg-elevated);
@@ -773,7 +776,7 @@ h1 {
   background: color-mix(in srgb, var(--bg-muted) 40%, var(--bg-elevated));
 }
 
-.trust-item h2 {
+.trust-item h3 {
   font-size: 1rem;
   font-family: var(--font-heading);
 }
