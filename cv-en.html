@@ -56,7 +56,7 @@
 
       @page {
         size: A4;
-        margin: 8mm;
+        margin: 0;
       }
 
       .cv-header {
@@ -243,133 +243,28 @@
       }
 
       @media print {
+        html,
         body {
-          background: #fff;
+          width: 210mm;
+          height: 297mm;
           margin: 0;
-        }
-
-        body,
-        .section-body,
-        .bullet-list li,
-        .skills-grid li {
-          font-size: 9.85pt;
-          line-height: 1.24;
+          padding: 0;
+          background: #fff;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
         }
 
         .cv-wrap {
-          width: auto;
-          margin: 0;
+          width: 210mm;
+          margin: 0 auto;
+          padding: 0;
         }
 
         .cv-sheet {
-          width: auto;
-          min-height: auto;
-          border: 0;
+          width: 210mm;
+          min-height: 297mm;
+          margin: 0 auto;
           box-shadow: none;
-          overflow: visible;
-        }
-
-        .cv-header {
-          grid-template-columns: 124px minmax(0, 1fr);
-          gap: 7.7mm;
-          padding: 10.2mm 10.2mm 5.2mm;
-          justify-items: stretch;
-          text-align: left;
-        }
-
-        .avatar {
-          width: 36mm;
-          height: 36mm;
-          font-size: 9.5pt;
-        }
-
-        .role {
-          margin: 0.9mm 0 1.4mm;
-        }
-
-        .alias {
-          margin: -0.9mm 0 2mm;
-        }
-
-        .contact-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 0.8mm 4.2mm;
-          width: auto;
-          text-align: left;
-        }
-
-        .section-title {
-          font-size: 10.8pt;
-          padding: 1.8mm 3.5mm;
-        }
-
-        .section-body {
-          padding: 1.7mm 9mm 2mm;
-        }
-
-        .section-body p {
-          margin: 0.45mm 0;
-          line-height: 1.24;
-        }
-
-        .timeline {
-          gap: 1.2mm;
-        }
-
-        .timeline-item {
-          grid-template-columns: 31mm minmax(0, 1fr);
-          gap: 2.1mm;
-        }
-
-        .bullet-list {
-          margin: 0.7mm 0 0;
-          padding-left: 3.8mm;
-        }
-
-        .bullet-list li,
-        .skills-grid li,
-        .cert-list li {
-          margin-top: 0.35mm;
-        }
-
-        .skills-grid {
-          gap: 0.6mm 4.5mm;
-        }
-
-        section:last-of-type {
-          break-inside: avoid;
-          page-break-inside: avoid;
-        }
-
-        .section-skills .section-body {
-          padding-top: 1.1mm;
-          padding-bottom: 1.2mm;
-        }
-
-        .section-skills .skills-grid {
-          gap: 0.2mm 4mm;
-        }
-
-        .section-skills .skills-grid li {
-          margin-top: 0.2mm;
-          line-height: 1.18;
-        }
-
-        .cert-list {
-          padding-left: 4mm;
-        }
-
-        .cv-wrap,
-        .cv-sheet,
-        .timeline-item,
-        .bullet-list li {
-          orphans: 3;
-          widows: 3;
-        }
-
-        section {
-          break-inside: auto;
-          page-break-inside: auto;
         }
       }
     </style>
@@ -503,6 +398,15 @@
                     Built a platform for automated document processing,
                     drafting, and publishing workflows.
                   </li>
+                  <li>
+                    Product live:
+                    <a
+                      href="https://proze.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >proze.app</a
+                    >
+                  </li>
                 </ul>
               </div>
             </article>
@@ -539,6 +443,15 @@
                     Operated production on <strong>DigitalOcean VPS</strong> and
                     optimized <strong>Reverse Proxy</strong> setup with
                     <strong>Nginx</strong>.
+                  </li>
+                  <li>
+                    Product live:
+                    <a
+                      href="https://www.englishforkids.me/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >englishforkids.me</a
+                    >
                   </li>
                 </ul>
               </div>

@@ -40,7 +40,7 @@
 
       @page {
         size: A4;
-        margin: 8mm;
+        margin: 0;
       }
 
       h1,
@@ -169,67 +169,22 @@
       }
 
       @media print {
+        html,
         body {
-          background: #fff;
+          width: 210mm;
+          height: 297mm;
           margin: 0;
-          font-size: 10pt;
-          line-height: 1.28;
+          padding: 0;
+          background: #fff;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
         }
 
         .sheet {
-          width: auto;
-          min-height: auto;
-          margin: 0;
-          border: 0;
-          padding: 0;
-        }
-
-        .header {
-          padding-bottom: 3mm;
-          margin-bottom: 3mm;
-        }
-
-        .contacts {
-          margin-top: 2mm;
-          gap: 0.7mm 5mm;
-          font-size: 9.7pt;
-        }
-
-        .section {
-          margin-top: 2.6mm;
-        }
-
-        .section-title {
-          font-size: 10.6pt;
-          padding-bottom: 0.7mm;
-        }
-
-        .section-body {
-          margin-top: 1.2mm;
-        }
-
-        .label {
-          margin-top: 1mm;
-        }
-
-        .entry {
-          grid-template-columns: 29mm minmax(0, 1fr);
-          gap: 2.2mm;
-          margin-top: 1.2mm;
-        }
-
-        ul {
-          margin: 0.7mm 0 0;
-          padding-left: 4mm;
-        }
-
-        li {
-          margin-top: 0.45mm;
-          line-height: 1.24;
-        }
-
-        .skills {
-          gap: 0.6mm 5mm;
+          width: 210mm;
+          min-height: 297mm;
+          margin: 0 auto;
+          box-shadow: none;
         }
       }
     </style>
@@ -354,6 +309,15 @@
                   (<strong>Frontend SSR/SSG</strong> &
                   <strong>Backend FastAPI</strong>).
                 </li>
+                <li>
+                  Product live:
+                  <a
+                    href="https://proze.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >proze.app</a
+                  >
+                </li>
               </ul>
             </div>
           </article>
@@ -392,6 +356,15 @@
                   Vận hành thực tế trên <strong>VPS DigitalOcean</strong>, tối
                   ưu hóa <strong>Reverse Proxy</strong> kết hợp
                   <strong>Nginx</strong>.
+                </li>
+                <li>
+                  Product live:
+                  <a
+                    href="https://www.englishforkids.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >englishforkids.me</a
+                  >
                 </li>
               </ul>
             </div>

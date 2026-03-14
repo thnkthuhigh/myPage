@@ -32,7 +32,7 @@
         background: #e9edf2;
         color: var(--ink);
         font-family: "Calibri", "Arial", "Helvetica", sans-serif;
-        font-size: 10.3pt;
+        font-size: 10.4pt;
         line-height: 1.34;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
@@ -57,7 +57,7 @@
 
       @page {
         size: A4;
-        margin: 10mm 15mm;
+        margin: 0;
       }
 
       .cv-header {
@@ -151,7 +151,7 @@
 
       .section-body {
         padding: 0 11mm 2.2mm;
-        font-size: 10pt;
+        font-size: 10.1pt;
       }
 
       .section-body p {
@@ -170,9 +170,9 @@
 
       .bullet-list li {
         margin-top: 0.7mm;
-        line-height: 1.45;
+        line-height: 1.4;
         margin-bottom: 4px;
-        font-size: 9.75pt;
+        font-size: 9.85pt;
       }
 
       .timeline-item:first-child {
@@ -200,7 +200,7 @@
         font-weight: 700;
         color: #2c4762;
         padding-top: 0.5mm;
-        font-size: 10pt;
+        font-size: 10.1pt;
       }
 
       .timeline-main {
@@ -245,6 +245,10 @@
         line-height: 1.3;
       }
 
+      section + section {
+        margin-top: 2.4mm;
+      }
+
       strong {
         font-weight: 700;
       }
@@ -255,135 +259,28 @@
       }
 
       @media print {
+        html,
         body {
-          background: #fff;
+          width: 210mm;
+          height: 297mm;
           margin: 0;
           padding: 0;
+          background: #fff;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
         }
 
         .cv-wrap {
-          width: auto;
-          margin: 0;
+          width: 210mm;
+          margin: 0 auto;
           padding: 0;
         }
 
         .cv-sheet {
-          width: auto;
-          min-height: auto;
-          border: 0;
+          width: 210mm;
+          min-height: 297mm;
+          margin: 0 auto;
           box-shadow: none;
-          overflow: visible;
-        }
-
-        .cv-header {
-          grid-template-columns: 124px minmax(0, 1fr);
-          gap: 7.7mm;
-          padding: 9.1mm 10.2mm 4.2mm;
-          justify-items: stretch;
-          text-align: left;
-        }
-
-        .avatar {
-          width: 28.5mm;
-          height: 28.5mm;
-          font-size: 9.5pt;
-        }
-
-        .role {
-          margin: 0.9mm 0 1.4mm;
-        }
-
-        .alias {
-          margin: -0.9mm 0 2mm;
-        }
-
-        .contact-grid {
-          gap: 0.9mm 4.5mm;
-          width: auto;
-          text-align: left;
-        }
-
-        .section-title {
-          font-size: 10.8pt;
-          margin-bottom: 1.6mm;
-          padding: 1.2mm 0;
-        }
-
-        .section-body {
-          padding: 0 9mm 1.8mm;
-        }
-
-        .section-body p {
-          margin: 0.45mm 0;
-          line-height: 1.24;
-        }
-
-        .timeline {
-          gap: 1.2mm;
-        }
-
-        .timeline-item {
-          grid-template-columns: 31mm minmax(0, 1fr);
-          gap: 2.1mm;
-        }
-
-        .bullet-list {
-          margin: 0.7mm 0 0;
-          padding-left: 3.8mm;
-        }
-
-        .timeline-main .bullet-list {
-          margin-top: 0.35mm;
-        }
-
-        .bullet-list li,
-        .skills-grid li,
-        .cert-list li {
-          margin-top: 0.35mm;
-        }
-
-        .skills-grid {
-          gap: 0.6mm 4.5mm;
-        }
-
-        .skills-grid li {
-          font-size: 9.85pt;
-        }
-
-        section:last-of-type {
-          break-inside: avoid;
-          page-break-inside: avoid;
-        }
-
-        .section-skills .section-body {
-          padding-top: 1.1mm;
-          padding-bottom: 1.2mm;
-        }
-
-        .section-skills .skills-grid {
-          gap: 0.2mm 4mm;
-        }
-
-        .section-skills .skills-grid li {
-          margin-top: 0.2mm;
-          line-height: 1.18;
-        }
-
-        .cert-list {
-          padding-left: 4mm;
-        }
-
-        .cv-wrap,
-        .cv-sheet,
-        .timeline-item,
-        .bullet-list li {
-          orphans: 3;
-          widows: 3;
-        }
-
-        section {
-          break-inside: auto;
-          page-break-inside: auto;
         }
       }
     </style>
@@ -516,6 +413,15 @@
                     AI <strong>bất đồng bộ</strong> qua
                     <strong>Celery/Redis</strong>.
                   </li>
+                  <li>
+                    Product live:
+                    <a
+                      href="https://proze.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >proze.app</a
+                    >
+                  </li>
                 </ul>
               </div>
             </article>
@@ -552,6 +458,15 @@
                     Vận hành thực tế trên <strong>VPS DigitalOcean</strong>, tối
                     ưu hóa <strong>Reverse Proxy</strong> kết hợp
                     <strong>Nginx</strong>.
+                  </li>
+                  <li>
+                    Product live:
+                    <a
+                      href="https://www.englishforkids.me/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >englishforkids.me</a
+                    >
                   </li>
                 </ul>
               </div>
