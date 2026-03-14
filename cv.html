@@ -49,6 +49,7 @@
         margin: 0 auto;
         background: var(--paper);
         border: 1px solid var(--line);
+        border-bottom: none;
         box-shadow: 0 10px 26px rgba(16, 34, 56, 0.12);
         overflow: hidden;
         -webkit-print-color-adjust: exact;
@@ -116,19 +117,15 @@
 
       .contact-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.4mm 5mm;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 20px;
         font-size: 9.6pt;
+        text-align: left;
       }
 
       .contact-item {
         color: var(--ink);
         font-variant-numeric: tabular-nums;
-      }
-
-      .contact-item.contact-highlight {
-        font-weight: 700;
-        white-space: nowrap;
       }
 
       .contact-item a {
@@ -261,13 +258,31 @@
       @media print {
         html,
         body {
-          width: 210mm;
-          height: 297mm;
+          width: auto;
+          height: auto;
           margin: 0;
           padding: 0;
           background: #fff;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
+        }
+
+        section {
+          break-inside: auto;
+          page-break-inside: auto;
+        }
+
+        .section-title {
+          break-after: avoid;
+          page-break-after: avoid;
+        }
+
+        .timeline-item,
+        .bullet-list,
+        .skills-grid,
+        .section-body {
+          break-inside: avoid;
+          page-break-inside: avoid;
         }
 
         .cv-wrap {
@@ -278,9 +293,49 @@
 
         .cv-sheet {
           width: 210mm;
-          min-height: 297mm;
+          min-height: auto;
           margin: 0 auto;
           box-shadow: none;
+        }
+
+        .cv-header {
+          padding: 8.8mm 11mm 4.2mm;
+        }
+
+        .contact-grid {
+          gap: 4px 20px;
+        }
+
+        .section-title {
+          margin: 0 0 1.4mm;
+          padding: 1.1mm 0;
+        }
+
+        section + section {
+          margin-top: 1.2mm;
+        }
+
+        .section-body {
+          padding: 0 10mm 1.2mm;
+        }
+
+        .section-body p {
+          margin: 0.7mm 0;
+          line-height: 1.38;
+        }
+
+        .timeline {
+          gap: 1.1mm;
+        }
+
+        .timeline-item:first-child {
+          margin-bottom: 3mm;
+        }
+
+        .bullet-list li {
+          margin-top: 0.45mm;
+          margin-bottom: 2px;
+          line-height: 1.32;
         }
       }
     </style>
@@ -305,15 +360,26 @@
                 >
               </div>
               <div class="contact-item">Thủ Đức, Hồ Chí Minh</div>
-              <div class="contact-item contact-highlight">
+              <div class="contact-item">
                 GitHub:
                 <a
                   href="https://github.com/thnkthuhigh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >thnkthuhigh</a
+                  >github.com/thnkthuhigh</a
                 >
-                | Portfolio:
+              </div>
+              <div class="contact-item">
+                LinkedIn:
+                <a
+                  href="https://www.linkedin.com/in/thnkthuhigh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >linkedin.com/in/thnkthuhigh</a
+                >
+              </div>
+              <div class="contact-item">
+                Portfolio:
                 <a
                   href="https://thnkthuhigh.dev/"
                   target="_blank"
@@ -329,13 +395,15 @@
           <h2 class="section-title">MỤC TIÊU NGHỀ NGHIỆP</h2>
           <div class="section-body">
             <p>
-              Sinh viên năm 4 định hướng Software Engineering/Fullstack. Nổi bật
-              với tư duy kiến trúc hệ thống (System Architecture), tối ưu hóa
-              API và tự động hóa luồng vận hành. Mục tiêu: Đảm nhận vị trí
-              Intern/Fresher để áp dụng ngay các best-practices về deployment
-              vào bài toán thực tế, đồng thời hoàn thiện khả năng phối hợp nhóm
-              và quản lý vòng đời mã nguồn theo chuẩn Agile/Scrum của doanh
-              nghiệp.
+              <strong>Sinh viên năm 4</strong> định hướng
+              <strong>Software Engineering/Fullstack</strong>. Nổi bật với
+              <strong>tư duy kiến trúc hệ thống (System Architecture)</strong>,
+              <strong>tối ưu hóa API</strong> và
+              <strong>tự động hóa luồng vận hành</strong>. Mục tiêu: Đảm nhận vị
+              trí Intern/Fresher để áp dụng ngay các best-practices về
+              deployment vào bài toán thực tế, đồng thời hoàn thiện khả năng
+              phối hợp nhóm và quản lý vòng đời mã nguồn theo chuẩn Agile/Scrum
+              của doanh nghiệp.
             </p>
           </div>
         </section>
@@ -478,18 +546,24 @@
           <h2 class="section-title">KỸ NĂNG KỸ THUẬT</h2>
           <div class="section-body">
             <ul class="skills-grid">
-              <li>Core Languages: TypeScript, JavaScript, Python, Java.</li>
               <li>
-                Kỹ thuật vận hành (Ops/Infrastructure): Docker, Nginx,
-                Cloudflare, GitHub Actions, Nginx Reverse Proxy.
+                Frontend & Core: Languages (TypeScript, JavaScript, Python),
+                Frameworks (React, Next.js App Router), UI & Data Management
+                (Tailwind CSS, TanStack Query).
               </li>
               <li>
-                Phương pháp phát triển & Test: Agile/Scrum, Git Flow, CI/CD,
-                Automated Tests (Vitest/Playwright).
+                Backend & Systems: Node.js (Express), FastAPI, PostgreSQL,
+                MongoDB, Redis, Realtime & Queue (Socket.IO, Celery).
               </li>
               <li>
-                Kỹ thuật lập trình: Clean Code, Monorepo, Socket.IO, RBAC,
-                RESTful API.
+                Workflow & Quality Control: CI/CD (GitHub Actions), Testing
+                (Vitest Unit, Playwright E2E), Standard (Git Flow, Husky,
+                lint-staged).
+              </li>
+              <li>
+                System & Integration: Container (Docker, Docker Compose), Web
+                Server (Nginx Reverse Proxy, SSL), Cloud (DigitalOcean VPS,
+                Cloudflare, AWS S3).
               </li>
             </ul>
           </div>

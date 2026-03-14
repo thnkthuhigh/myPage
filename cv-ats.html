@@ -35,6 +35,7 @@
         margin: 8mm auto;
         background: var(--paper);
         border: 1px solid var(--line);
+        border-bottom: none;
         padding: 10mm 11mm;
       }
 
@@ -77,9 +78,10 @@
       .contacts {
         margin-top: 2.5mm;
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1mm 6mm;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 20px;
         font-size: 10pt;
+        text-align: left;
       }
 
       .section {
@@ -154,10 +156,6 @@
         text-decoration: none;
       }
 
-      .contacts .contact-highlight {
-        font-weight: 700;
-      }
-
       .skills {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -171,8 +169,8 @@
       @media print {
         html,
         body {
-          width: 210mm;
-          height: 297mm;
+          width: auto;
+          height: auto;
           margin: 0;
           padding: 0;
           background: #fff;
@@ -180,11 +178,77 @@
           print-color-adjust: exact;
         }
 
+        .section {
+          break-inside: auto;
+          page-break-inside: auto;
+        }
+
+        .section-title {
+          break-after: avoid;
+          page-break-after: avoid;
+        }
+
+        .entry,
+        .section-body,
+        ul {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
         .sheet {
-          width: 210mm;
-          min-height: 297mm;
-          margin: 0 auto;
+          width: 100%;
+          min-height: auto;
+          margin: 0;
+          padding: 8.5mm 10mm;
+          border: none;
           box-shadow: none;
+        }
+
+        .header {
+          padding-bottom: 2.8mm;
+          margin-bottom: 3mm;
+        }
+
+        .contacts {
+          margin-top: 2mm;
+          gap: 4px 16px;
+          font-size: 9.6pt;
+        }
+
+        .section {
+          margin-top: 2mm;
+        }
+
+        .section-title {
+          font-size: 10.6pt;
+          padding-bottom: 0.7mm;
+        }
+
+        .section-body {
+          margin-top: 1.2mm;
+        }
+
+        .entry {
+          gap: 2.4mm;
+          margin-top: 1.2mm;
+        }
+
+        .entry:first-child {
+          margin-bottom: 10px;
+        }
+
+        .label {
+          margin-top: 0.9mm;
+        }
+
+        ul {
+          margin-top: 0.7mm;
+        }
+
+        li {
+          margin-top: 0.45mm;
+          margin-bottom: 2px;
+          line-height: 1.32;
         }
       }
     </style>
@@ -201,7 +265,7 @@
             <a href="mailto:a01204496068@gmail.com">a01204496068@gmail.com</a>
           </div>
           <div>Thủ Đức, Hồ Chí Minh</div>
-          <div class="contact-highlight">
+          <div>
             GitHub:
             <a
               href="https://github.com/thnkthuhigh"
@@ -209,7 +273,18 @@
               rel="noopener noreferrer"
               >github.com/thnkthuhigh</a
             >
-            | Portfolio:
+          </div>
+          <div>
+            LinkedIn:
+            <a
+              href="https://www.linkedin.com/in/thnkthuhigh"
+              target="_blank"
+              rel="noopener noreferrer"
+              >linkedin.com/in/thnkthuhigh</a
+            >
+          </div>
+          <div>
+            Portfolio:
             <a
               href="https://thnkthuhigh.dev/"
               target="_blank"
@@ -376,18 +451,24 @@
         <h2 class="section-title">Kỹ năng kỹ thuật</h2>
         <div class="section-body">
           <ul class="skills">
-            <li>Core Languages: TypeScript, JavaScript, Python, Java.</li>
             <li>
-              Kỹ thuật vận hành (Ops/Infrastructure): Docker, Nginx, Cloudflare,
-              GitHub Actions, Nginx Reverse Proxy.
+              Frontend & Core: Languages (TypeScript, JavaScript, Python),
+              Frameworks (React, Next.js App Router), UI & Data Management
+              (Tailwind CSS, TanStack Query).
             </li>
             <li>
-              Phương pháp phát triển & Test: Agile/Scrum, Git Flow, CI/CD,
-              Automated Tests (Vitest/Playwright).
+              Backend & Systems: Node.js (Express), FastAPI, PostgreSQL,
+              MongoDB, Redis, Realtime & Queue (Socket.IO, Celery).
             </li>
             <li>
-              Kỹ thuật lập trình: Clean Code, Monorepo, Socket.IO, RBAC, RESTful
-              API.
+              Workflow & Quality Control: CI/CD (GitHub Actions), Testing
+              (Vitest Unit, Playwright E2E), Standard (Git Flow, Husky,
+              lint-staged).
+            </li>
+            <li>
+              System & Integration: Container (Docker, Docker Compose), Web
+              Server (Nginx Reverse Proxy, SSL), Cloud (DigitalOcean VPS,
+              Cloudflare, AWS S3).
             </li>
           </ul>
         </div>
@@ -415,5 +496,21 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("print") !== "1") return;
+
+        window.addEventListener(
+          "load",
+          () => {
+            setTimeout(() => {
+              window.print();
+            }, 250);
+          },
+          { once: true },
+        );
+      })();
+    </script>
   </body>
 </html>

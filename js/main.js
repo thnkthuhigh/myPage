@@ -2578,7 +2578,12 @@
 
       const query = url.searchParams.toString();
       const hash = url.hash || "";
-      const basePath = currentLanguage === "en" ? "cv-en.html" : "cv.html";
+      const isExplicitEnglishCv = rawHref.startsWith("cv-en.html");
+      const basePath = isExplicitEnglishCv
+        ? "cv-en.html"
+        : currentLanguage === "en"
+          ? "cv-en.html"
+          : "cv.html";
       link.setAttribute(
         "href",
         `${basePath}${query ? `?${query}` : ""}${hash}`,
