@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import atsCvTemplateVi from "../../template/cv-ats.html?raw";
 import atsCvTemplateEn from "../../template/cv-ats-en.html?raw";
+import { CvDownloadDock } from "../components/CvDownloadDock";
 import { parseTemplateHtml } from "../lib/templateHtml";
 
 type CvLanguage = "vi" | "en";
@@ -36,6 +37,7 @@ export function AtsCvPage({ language }: AtsCvPageProps) {
   return (
     <>
       <style>{template.styles}</style>
+      <CvDownloadDock language={language} />
       <div dangerouslySetInnerHTML={{ __html: template.body }} />
     </>
   );

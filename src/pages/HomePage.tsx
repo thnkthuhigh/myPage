@@ -1,4 +1,4 @@
-import { type FormEvent, useEffect, useRef, useState } from "react";
+﻿import { type FormEvent, useEffect, useRef, useState } from "react";
 import { PageBackground } from "../components/PageBackground";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
@@ -111,7 +111,7 @@ const SOCIAL_LINKS = [
     ),
   },
   {
-    href: "mailto:a01204496068@gmail.com",
+    href: "mailto:ngchithanh.dev@gmail.com",
     label: "Email",
     icon: (
       <path
@@ -135,9 +135,9 @@ function getRevealDelay(index: number): "80" | "160" | undefined {
 }
 
 function ProjectsSection({ language }: { language: Language }) {
-  const [filter, setFilter] = useState<"all" | "frontend" | "product" | "private">(
-    "all",
-  );
+  const [filter, setFilter] = useState<
+    "all" | "frontend" | "product" | "private"
+  >("all");
   const labels = FILTER_LABELS[language];
   const ui = getUiText(language);
   const projects = getOrderedProjectCases(language);
@@ -215,7 +215,9 @@ function ProjectsSection({ language }: { language: Language }) {
                       decoding="async"
                     />
                   ) : null}
-                  <span className="project-visual-tag">{project.previewTag}</span>
+                  <span className="project-visual-tag">
+                    {project.previewTag}
+                  </span>
                 </div>
 
                 <h3>{project.title}</h3>
@@ -270,7 +272,9 @@ function ProjectsSection({ language }: { language: Language }) {
 }
 
 export function HomePage() {
-  const [language, setLanguage] = useState<Language>(() => getInitialLanguage());
+  const [language, setLanguage] = useState<Language>(() =>
+    getInitialLanguage(),
+  );
   const formStatusRef = useRef<HTMLParagraphElement | null>(null);
   const ui = getUiText(language);
   const heroCases = HERO_CASE_RAIL_CONTENT[language];
@@ -284,7 +288,9 @@ export function HomePage() {
 
   useEffect(() => {
     persistLanguage(language);
-    applyTranslationEntries(indexTranslations[language] ?? indexTranslations.vi);
+    applyTranslationEntries(
+      indexTranslations[language] ?? indexTranslations.vi,
+    );
     syncChromeLanguage(language, ui);
   }, [language, ui]);
 
@@ -336,7 +342,7 @@ export function HomePage() {
       formStatusRef.current.textContent = ui.formOpening;
     }
 
-    window.location.href = `mailto:a01204496068@gmail.com?subject=${mailtoSubject}&body=${body}`;
+    window.location.href = `mailto:ngchithanh.dev@gmail.com?subject=${mailtoSubject}&body=${body}`;
   };
 
   return (
@@ -354,7 +360,9 @@ export function HomePage() {
         brandHref="#home"
         brandLabel={language === "en" ? "Back to top" : "Về đầu trang"}
         navLabel={language === "en" ? "Primary navigation" : "Điều hướng chính"}
-        mobileNavLabel={language === "en" ? "Mobile navigation" : "Điều hướng di động"}
+        mobileNavLabel={
+          language === "en" ? "Mobile navigation" : "Điều hướng di động"
+        }
         navLinks={HOME_NAV_LINKS}
         mobileLinks={HOME_NAV_LINKS}
       />
@@ -364,10 +372,10 @@ export function HomePage() {
           <div className="container hero-grid">
             <div className="hero-content" data-reveal="up">
               <p className="eyebrow">
-                Sinh viên năm 4 CNTT · Tập trung Frontend
+                Sinh viên năm 4 CNTT · Software Engineer Intern
               </p>
               <h1>
-                Portfolio thực tập Frontend:{" "}
+                Portfolio thực tập Software Engineer:{" "}
                 <span className="headline-accent">học và làm thật</span>, UI rõ
                 ràng, code dễ đọc.
               </h1>
@@ -421,11 +429,13 @@ export function HomePage() {
               </div>
 
               <div className="quick-contact">
-                <a href="mailto:a01204496068@gmail.com">a01204496068@gmail.com</a>
+                <a href="mailto:ngchithanh.dev@gmail.com">
+                  ngchithanh.dev@gmail.com
+                </a>
                 <span>•</span>
                 <a href="tel:0359498968">0359498968</a>
                 <span>•</span>
-                <span>Tìm cơ hội thực tập Frontend</span>
+                <span>Tìm cơ hội thực tập Software Engineer</span>
               </div>
 
               <div className="hero-proof-chips">
@@ -445,7 +455,9 @@ export function HomePage() {
                 </li>
                 <li>
                   <span className="kpi-value">6 case studies</span>
-                  <span className="kpi-label">8 public repos + 2 private cores</span>
+                  <span className="kpi-label">
+                    8 public repos + 2 private cores
+                  </span>
                 </li>
                 <li>
                   <span className="kpi-value">Stack chính</span>
@@ -471,13 +483,21 @@ export function HomePage() {
                   CV tuyển dụng: mở online hoặc tải PDF ngay (1 click).
                 </p>
                 <div className="hero-cv-actions">
-                  <a href="cv-ats.html" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="cv-ats.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     CV ATS-safe
                   </a>
                   <a href="cv.html" target="_blank" rel="noopener noreferrer">
                     CV Vietnamese
                   </a>
-                  <a href="cv-en.html" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="cv-en.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     CV English
                   </a>
                   <a
@@ -518,14 +538,16 @@ export function HomePage() {
           <div className="container split-grid">
             <div data-reveal="left">
               <p className="section-label">Giới thiệu</p>
-              <h2 className="section-title">Tóm tắt nhanh để bắt đầu trao đổi</h2>
+              <h2 className="section-title">
+                Tóm tắt nhanh để bắt đầu trao đổi
+              </h2>
             </div>
             <div className="about-content" data-reveal="right">
               <p>
                 Mình là sinh viên năm 4, định hướng Software Engineer Intern
                 (Frontend/Product). Portfolio này tổng hợp các dự án đã triển
-                khai thực tế như healthcare-clinic-system,
-                language-center-saas, proze-ai và personal-portfolio.
+                khai thực tế như healthcare-clinic-system, language-center-saas,
+                proze-ai và personal-portfolio.
               </p>
               <p>
                 Khi làm việc, mình ưu tiên làm rõ yêu cầu trước, dựng UI dễ
@@ -533,9 +555,13 @@ export function HomePage() {
                 hành ổn định.
               </p>
               <ul className="about-list">
-                <li>Đọc codebase nhanh, tách task rõ và bám timeline sprint.</li>
+                <li>
+                  Đọc codebase nhanh, tách task rõ và bám timeline sprint.
+                </li>
                 <li>Ưu tiên component rõ ràng, responsive và dễ bảo trì.</li>
-                <li>Giữ nhịp release bằng lint/test/build và checklist review.</li>
+                <li>
+                  Giữ nhịp release bằng lint/test/build và checklist review.
+                </li>
               </ul>
             </div>
           </div>
@@ -552,7 +578,8 @@ export function HomePage() {
               <div className="trust-item">
                 <h3>Frontend đi cùng integration</h3>
                 <p>
-                  Làm từ component/UI đến state, xử lý lỗi và luồng API/realtime.
+                  Làm từ component/UI đến state, xử lý lỗi và luồng
+                  API/realtime.
                 </p>
               </div>
               <div className="trust-item">
@@ -592,8 +619,12 @@ export function HomePage() {
                     Node.js/Express, FastAPI, Spring Boot (mức triển khai
                     feature)
                   </li>
-                  <li>REST API contract, Swagger/OpenAPI, error flow handling</li>
-                  <li>Realtime với Socket.IO/SSE, async queue với Redis/Celery</li>
+                  <li>
+                    REST API contract, Swagger/OpenAPI, error flow handling
+                  </li>
+                  <li>
+                    Realtime với Socket.IO/SSE, async queue với Redis/Celery
+                  </li>
                 </ul>
               </article>
 
@@ -611,7 +642,9 @@ export function HomePage() {
                 <ul>
                   <li>Docker/Docker Compose, Nginx, local-to-prod workflow</li>
                   <li>GitHub Actions CI/CD, quality gates (lint/test/build)</li>
-                  <li>Git flow, review checklist, phối hợp với QA/PM/Designer</li>
+                  <li>
+                    Git flow, review checklist, phối hợp với QA/PM/Designer
+                  </li>
                 </ul>
               </article>
             </div>
@@ -639,20 +672,27 @@ export function HomePage() {
                   </p>
                   <p>
                     Tập trung hệ thống hóa 6 case study theo format dễ đọc:
-                    problem, constraints, kiến trúc, kết quả và bài học kỹ thuật.
+                    problem, constraints, kiến trúc, kết quả và bài học kỹ
+                    thuật.
                   </p>
                   <ul>
                     <li>
-                      Chuẩn hóa template case-study cho cả public và private repo.
+                      Chuẩn hóa template case-study cho cả public và private
+                      repo.
                     </li>
                     <li>
-                      Rèn khả năng trình bày quyết định kỹ thuật ngắn gọn, rõ ràng.
+                      Rèn khả năng trình bày quyết định kỹ thuật ngắn gọn, rõ
+                      ràng.
                     </li>
                   </ul>
                 </div>
               </article>
 
-              <article className="timeline-item" data-reveal="up" data-delay="80">
+              <article
+                className="timeline-item"
+                data-reveal="up"
+                data-delay="80"
+              >
                 <div className="timeline-period">2025 - 2026</div>
                 <div className="timeline-main">
                   <h3>Đồ án và dự án nhóm tại trường</h3>
@@ -663,7 +703,8 @@ export function HomePage() {
                   </p>
                   <ul>
                     <li>
-                      Xây component tái sử dụng và quy ước code review trong nhóm.
+                      Xây component tái sử dụng và quy ước code review trong
+                      nhóm.
                     </li>
                     <li>
                       Tự kiểm thử responsive, accessibility và hiệu năng cơ bản.
@@ -672,14 +713,20 @@ export function HomePage() {
                 </div>
               </article>
 
-              <article className="timeline-item" data-reveal="up" data-delay="160">
+              <article
+                className="timeline-item"
+                data-reveal="up"
+                data-delay="160"
+              >
                 <div className="timeline-period">2023 - 2025</div>
                 <div className="timeline-main">
                   <h3>Nền tảng kỹ thuật</h3>
-                  <p className="timeline-company">Luyện thuật toán + web fundamentals</p>
+                  <p className="timeline-company">
+                    Luyện thuật toán + web fundamentals
+                  </p>
                   <p>
-                    Rèn nền tảng HTML/CSS/JavaScript, sau đó chuyển sang React và
-                    TypeScript để làm các bài toán sản phẩm thực tế hơn.
+                    Rèn nền tảng HTML/CSS/JavaScript, sau đó chuyển sang React
+                    và TypeScript để làm các bài toán sản phẩm thực tế hơn.
                   </p>
                   <ul>
                     <li>
@@ -697,7 +744,9 @@ export function HomePage() {
               style={{ marginTop: "var(--subsection-gap)" }}
             >
               <p className="section-label">Cách làm việc</p>
-              <h2 className="section-title">Quy trình 4 bước khi nhận một feature</h2>
+              <h2 className="section-title">
+                Quy trình 4 bước khi nhận một feature
+              </h2>
             </div>
 
             <div className="process-grid">
@@ -706,17 +755,29 @@ export function HomePage() {
                 <h3>Hiểu đúng bài toán</h3>
                 <p>Chốt rõ user flow, success metric, phạm vi và rủi ro.</p>
               </article>
-              <article className="process-card" data-reveal="up" data-delay="80">
+              <article
+                className="process-card"
+                data-reveal="up"
+                data-delay="80"
+              >
                 <span>02</span>
                 <h3>Thiết kế kỹ thuật</h3>
                 <p>Tách component, state, API contract trước khi code.</p>
               </article>
-              <article className="process-card" data-reveal="up" data-delay="160">
+              <article
+                className="process-card"
+                data-reveal="up"
+                data-delay="160"
+              >
                 <span>03</span>
                 <h3>Triển khai &amp; review</h3>
                 <p>Code sạch, test điểm rủi ro cao, review theo checklist.</p>
               </article>
-              <article className="process-card" data-reveal="up" data-delay="240">
+              <article
+                className="process-card"
+                data-reveal="up"
+                data-delay="240"
+              >
                 <span>04</span>
                 <h3>Đo lường sau release</h3>
                 <p>Đọc số liệu thật rồi tối ưu vòng tiếp theo.</p>
@@ -729,7 +790,9 @@ export function HomePage() {
           <div className="container">
             <div className="section-head" data-reveal="up">
               <p className="section-label">CV Đầy Đủ</p>
-              <h2 className="section-title">CV gọn để nhà tuyển dụng xem nhanh</h2>
+              <h2 className="section-title">
+                CV gọn để nhà tuyển dụng xem nhanh
+              </h2>
               <p className="section-subtitle">
                 Đây là bản CV gói gọn thông tin cốt lõi cho vị trí thực tập
                 Frontend. Bạn có thể mở online hoặc tải PDF trực tiếp.
@@ -739,9 +802,9 @@ export function HomePage() {
             <article className="cv-inline-card" data-reveal="up">
               <div className="cv-inline-head">
                 <div>
-                  <h3>Nguyễn Chí Thanh · Frontend Intern</h3>
+                  <h3>Nguyễn Chí Thanh · Software Engineer Intern</h3>
                   <p>
-                    Cập nhật: 2026 · Ưu tiên vị trí Frontend Intern ·
+                    Cập nhật: 2026 · Ưu tiên vị trí Software Engineer Intern ·
                     Sẵn sàng nhận test task phù hợp.
                   </p>
                 </div>
@@ -792,7 +855,7 @@ export function HomePage() {
               <div className="cv-inline-grid">
                 <div>
                   <strong>Liên hệ</strong>
-                  <p>Email: a01204496068@gmail.com</p>
+                  <p>Email: ngchithanh.dev@gmail.com</p>
                   <p>Phone: 0359498968</p>
                   <p>LinkedIn: linkedin.com/in/thnkthuhigh</p>
                 </div>
@@ -819,7 +882,9 @@ export function HomePage() {
                 <h3>Stack</h3>
                 <p>React, Next.js, TypeScript, Node.js, DevOps basics</p>
                 <ul>
-                  <li>Frontend architecture rõ ràng, ưu tiên maintainability</li>
+                  <li>
+                    Frontend architecture rõ ràng, ưu tiên maintainability
+                  </li>
                   <li>Vững API/backend flow và release quality cơ bản</li>
                 </ul>
               </article>
@@ -832,14 +897,22 @@ export function HomePage() {
                 <p>6 case studies from 8 public repos + 2 private cores</p>
                 <ul>
                   <li>Language Center SaaS: production dashboard đa vai trò</li>
-                  <li>AI Doc Formatter / Proze AI: AI editor + multi-format export</li>
+                  <li>
+                    AI Doc Formatter / Proze AI: AI editor + multi-format export
+                  </li>
                   <li>Healthcare Clinic: doctor queue + consultation flow</li>
                   <li>RealTime Auction: realtime bidding UI với Socket.IO</li>
                   <li>Cloud Clipboard: self-hosted utility cho text + image</li>
-                  <li>Private Workflow Suite: schema form + role-based access</li>
+                  <li>
+                    Private Workflow Suite: schema form + role-based access
+                  </li>
                 </ul>
               </article>
-              <article className="snapshot-card" data-reveal="up" data-delay="120">
+              <article
+                className="snapshot-card"
+                data-reveal="up"
+                data-delay="120"
+              >
                 <h3>Engineering Strengths</h3>
                 <p>Không chỉ tool list, tập trung năng lực triển khai</p>
                 <ul>
@@ -849,12 +922,16 @@ export function HomePage() {
                   <li>Performance awareness khi release</li>
                 </ul>
               </article>
-              <article className="snapshot-card" data-reveal="up" data-delay="160">
+              <article
+                className="snapshot-card"
+                data-reveal="up"
+                data-delay="160"
+              >
                 <h3>Education &amp; Availability</h3>
                 <p>Sinh viên năm 4 · Khoa học máy tính</p>
                 <ul>
-                  <li>Định hướng: Frontend / Product Engineering</li>
-                  <li>Đang tìm cơ hội thực tập Frontend</li>
+                  <li>Định hướng: Software Engineer Intern</li>
+                  <li>Đang tìm cơ hội thực tập Software Engineer</li>
                   <li>Sẵn sàng nhận test task phù hợp</li>
                   <li>Flexible schedule: part-time/full-time</li>
                 </ul>
@@ -867,21 +944,29 @@ export function HomePage() {
           <div className="container">
             <div className="section-head" data-reveal="up">
               <p className="section-label">FAQ</p>
-              <h2 className="section-title">Một số câu hỏi nhà tuyển dụng hay hỏi</h2>
+              <h2 className="section-title">
+                Một số câu hỏi nhà tuyển dụng hay hỏi
+              </h2>
             </div>
 
             <div className="faq-grid">
               <article className="faq-item" data-reveal="up">
                 <h3>Có thể làm bài test kỹ thuật không?</h3>
-                <p>Có, mình sẵn sàng làm test task và trình bày cách làm rõ ràng.</p>
+                <p>
+                  Có, mình sẵn sàng làm test task và trình bày cách làm rõ ràng.
+                </p>
               </article>
               <article className="faq-item" data-reveal="up" data-delay="80">
                 <h3>Có thể demo project private không?</h3>
-                <p>Có thể chia sẻ walkthrough trong phạm vi NDA khi được yêu cầu.</p>
+                <p>
+                  Có thể chia sẻ walkthrough trong phạm vi NDA khi được yêu cầu.
+                </p>
               </article>
               <article className="faq-item" data-reveal="up" data-delay="160">
                 <h3>Có thể làm part-time không?</h3>
-                <p>Có, linh hoạt lịch part-time/full-time theo giai đoạn học kỳ.</p>
+                <p>
+                  Có, linh hoạt lịch part-time/full-time theo giai đoạn học kỳ.
+                </p>
               </article>
             </div>
           </div>
@@ -891,17 +976,19 @@ export function HomePage() {
           <div className="container contact-grid">
             <div data-reveal="left">
               <p className="section-label">Liên hệ</p>
-              <h2 className="section-title">Nếu phù hợp, mình rất mong được trao đổi</h2>
+              <h2 className="section-title">
+                Nếu phù hợp, mình rất mong được trao đổi
+              </h2>
               <p className="contact-lead">
-                Mình đang tìm cơ hội thực tập Frontend theo hướng Product
-                Engineering. Mình có thể gửi CV PDF, transcript và giới thiệu
-                thêm về các dự án private qua email khi cần.
+                Mình đang tìm cơ hội thực tập Software Engineer tại Engineering.
+                Mình có thể gửi CV PDF, transcript và giới thiệu thêm về các dự
+                án private qua email khi cần.
               </p>
 
               <div className="contact-quick-actions">
                 <a
                   className="btn btn-primary"
-                  href="mailto:a01204496068@gmail.com?subject=Opportunity%20Discussion%20-%20Nguyen%20Chi%20Thanh"
+                  href="mailto:ngchithanh.dev@gmail.com?subject=Opportunity%20Discussion%20-%20Nguyen%20Chi%20Thanh"
                 >
                   Trao đổi qua email
                 </a>
@@ -918,7 +1005,9 @@ export function HomePage() {
               <ul className="contact-list">
                 <li>
                   <span>Email</span>
-                  <a href="mailto:a01204496068@gmail.com">a01204496068@gmail.com</a>
+                  <a href="mailto:ngchithanh.dev@gmail.com">
+                    ngchithanh.dev@gmail.com
+                  </a>
                 </li>
                 <li>
                   <span>Điện thoại</span>
@@ -976,7 +1065,12 @@ export function HomePage() {
 
               <div className="field">
                 <label htmlFor="message">Nội dung</label>
-                <textarea id="message" name="message" rows={5} required></textarea>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  required
+                ></textarea>
               </div>
 
               <button type="submit" className="btn btn-primary">

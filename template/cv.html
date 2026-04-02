@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -263,6 +263,8 @@
           margin: 0;
           padding: 0;
           background: #fff;
+          font-size: 10.1pt;
+          line-height: 1.34;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
         }
@@ -295,50 +297,109 @@
           width: 100%;
           min-height: auto;
           margin: 0;
+          border: none;
           box-shadow: none;
+          overflow: hidden;
         }
 
         .cv-header {
-          padding: 9.1mm 10.9mm 4.3mm;
+          padding: 9mm 11mm 4.5mm;
+          gap: 8mm;
+        }
+
+        .avatar {
+          width: 28mm;
+          height: 28mm;
+        }
+
+        .name {
+          font-size: 19pt;
+        }
+
+        .role {
+          margin: 1.2mm 0 2mm;
+          font-size: 11pt;
         }
 
         .contact-grid {
           gap: 4px 18px;
-          font-size: 9.45pt;
+          font-size: 9.3pt;
         }
 
         .section-title {
-          margin: 0 0 1.45mm;
-          padding: 1.12mm 0;
+          margin: 0 0 1.5mm;
+          padding: 1.2mm 0;
+          font-size: 10.8pt;
         }
 
         section + section {
-          margin-top: 1.35mm;
+          margin-top: 1mm;
         }
 
         .section-body {
-          padding: 0 9.8mm 1.25mm;
-          font-size: 10pt;
+          padding: 0 11mm 1.2mm;
+          font-size: 9.8pt;
         }
 
         .section-body p {
-          margin: 0.72mm 0;
-          line-height: 1.37;
+          margin: 0.6mm 0;
+          line-height: 1.36;
         }
 
         .timeline {
-          gap: 1.18mm;
+          gap: 1.2mm;
+        }
+
+        .timeline-item {
+          grid-template-columns: 33mm minmax(0, 1fr);
+          gap: 2mm;
         }
 
         .timeline-item:first-child {
-          margin-bottom: 2.8mm;
+          margin-bottom: 2mm;
+        }
+
+        .timeline-period {
+          font-size: 9.8pt;
+        }
+
+        .timeline-main {
+          line-height: 1.3;
+        }
+
+        .timeline-sub {
+          font-size: 9.3pt;
+        }
+
+        .bullet-list {
+          margin-top: 0.4mm;
         }
 
         .bullet-list li {
-          margin-top: 0.48mm;
+          margin-top: 0.4mm;
           margin-bottom: 1px;
-          line-height: 1.31;
-          font-size: 9.72pt;
+          line-height: 1.34;
+          font-size: 9.5pt;
+        }
+
+        .timeline-main .bullet-list {
+          margin-top: 0.35mm;
+        }
+
+        .skills-grid {
+          gap: 0.5mm 5mm;
+        }
+
+        .skills-grid li {
+          margin-top: 0.4mm;
+          font-size: 9.5pt;
+          line-height: 1.3;
+        }
+
+        .cert-list li {
+          margin-top: 0.4mm;
+          font-size: 9.5pt;
+          line-height: 1.3;
         }
       }
     </style>
@@ -355,11 +416,12 @@
             <p class="role">Software Engineer Intern</p>
 
             <div class="contact-grid">
+              <div class="contact-item">Ngày sinh: 22/10/2004</div>
               <div class="contact-item">Điện thoại: 0359 498 968</div>
               <div class="contact-item">
                 Email:
-                <a href="mailto:a01204496068@gmail.com"
-                  >a01204496068@gmail.com</a
+                <a href="mailto:ngchithanh.dev@gmail.com"
+                  >ngchithanh.dev@gmail.com</a
                 >
               </div>
               <div class="contact-item">Thủ Đức, Hồ Chí Minh</div>
@@ -398,18 +460,63 @@
           <h2 class="section-title">MỤC TIÊU NGHỀ NGHIỆP</h2>
           <div class="section-body">
             <p>
-              <strong>Sinh viên năm 4</strong> định hướng
-              <strong>Software Engineering/Fullstack</strong>, có kinh nghiệm
-              triển khai frontend và tích hợp backend trong các dự án thực tế.
-              Mục tiêu: tìm cơ hội thực tập để đóng góp vào tính năng sản phẩm,
-              củng cố nền tảng kỹ thuật và nâng cao khả năng phối hợp trong quy
-              trình làm việc nhóm.
+              <strong>Sinh viên năm 4 HUTECH</strong>, tìm vị trí
+              <strong>thực tập Software Engineer</strong> tại công ty product
+              hoặc startup. Có kinh nghiệm freelance xây ứng dụng cho doanh
+              nghiệp thực tế, cùng nhiều dự án cá nhân và nhóm đã deploy. Tự học
+              nhanh, chủ động tiếp cận công nghệ mới và vận dụng AI tools trong
+              quy trình phát triển.
             </p>
           </div>
         </section>
 
         <section>
-          <h2 class="section-title">DỰ ÁN GITHUB NỔI BẬT</h2>
+          <h2 class="section-title">KINH NGHIỆM LÀM VIỆC</h2>
+          <div class="section-body timeline">
+            <article class="timeline-item">
+              <div class="timeline-period">06/2025 – 01/2026</div>
+              <div class="timeline-main">
+                <span class="timeline-head">Freelance Fullstack Developer</span>
+                <span class="timeline-sub"
+                  >| Trung tâm tiếng Anh (Language Center SaaS) ·
+                  <a
+                    href="https://github.com/thnkthuhigh/language-center-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >github.com/thnkthuhigh/language-center-saas</a
+                  ></span
+                >
+                <ul class="bullet-list">
+                  <li>
+                    Nhận dự án freelance xây ứng dụng quản lý trọn gói cho một
+                    trung tâm ngoại ngữ thực tế — làm việc trực tiếp với chủ
+                    doanh nghiệp.
+                  </li>
+                  <li>
+                    Thiết kế và triển khai fullstack: React + TypeScript +
+                    Node.js/Express + MongoDB + Socket.IO realtime.
+                  </li>
+                  <li>
+                    Deploy trên <strong>VPS DigitalOcean</strong> + Nginx +
+                    Cloudflare. Viết test tự động đảm bảo ổn định khi release.
+                  </li>
+                  <li>
+                    Sản phẩm đã hoàn thiện và demo cho phía trung tâm. Demo:
+                    <a
+                      href="https://www.englishforkids.me/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >englishforkids.me</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">DỰ ÁN NỔI BẬT</h2>
           <div class="section-body timeline">
             <article class="timeline-item">
               <div class="timeline-period">01/2026 – Nay</div>
@@ -425,7 +532,9 @@
                   ></span
                 >
                 <ul class="bullet-list">
-                  <li>Vai trò: Thành viên phát triển (Team 5 thành viên).</li>
+                  <li>
+                    Vai trò: Project Lead & Integrator (Team 5 thành viên).
+                  </li>
                   <li>
                     Mô tả: Hệ thống quản lý phòng khám đa khoa phân quyền (Bác
                     sĩ, Bệnh nhân, Admin).
@@ -443,8 +552,12 @@
                     để chuẩn hóa mã nguồn.
                   </li>
                   <li>
-                    Tham gia review Pull Requests, xử lý merge conflict và phối
-                    hợp theo quy trình làm việc của nhóm.
+                    Review và merge tất cả nhánh từ các thành viên, là người
+                    duyệt cuối cùng trước khi tích hợp vào sản phẩm.
+                  </li>
+                  <li>
+                    Phát triển module <strong>Admin</strong>: quản lý người
+                    dùng, phân quyền và điều phối dữ liệu giữa các vai trò.
                   </li>
                 </ul>
               </div>
@@ -464,7 +577,7 @@
                   ></span
                 >
                 <ul class="bullet-list">
-                  <li>Vai trò: Fullstack Developer.</li>
+                  <li>Vai trò: Fullstack Developer (Team size: 1).</li>
                   <li>
                     Mô tả: Nền tảng AI hỗ trợ xử lý, soạn thảo và xuất bản tài
                     liệu tự động.
@@ -480,58 +593,16 @@
                     <strong>Celery/Redis</strong>.
                   </li>
                   <li>
-                    Product live:
+                    Quy mô: <strong>50+ API endpoints</strong>, automated
+                    testing, CI/CD pipeline.
+                  </li>
+                  <li>
+                    Demo:
                     <a
                       href="https://proze.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       >proze.app</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-period">06/2025 – 01/2026</div>
-              <div class="timeline-main">
-                <span class="timeline-head">Language Center SaaS</span>
-                <span class="timeline-sub"
-                  >|
-                  <a
-                    href="https://github.com/thnkthuhigh/language-center-saas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >github.com/thnkthuhigh/language-center-saas</a
-                  ></span
-                >
-                <ul class="bullet-list">
-                  <li>Vai trò: Fullstack Developer.</li>
-                  <li>
-                    Mô tả: Ứng dụng SaaS quản lý lớp học, tài chính và nghiệp vụ
-                    trung tâm ngoại ngữ.
-                  </li>
-                  <li>
-                    Công nghệ: React, Node.js, Express, MongoDB, Socket.IO,
-                    Nginx, Cloudflare.
-                  </li>
-                  <li>
-                    Xây dựng <strong>RESTful API</strong> và tích hợp
-                    <strong>Socket.IO</strong> xử lý
-                    <strong>realtime</strong> (điểm danh, thanh toán).
-                  </li>
-                  <li>
-                    Vận hành thực tế trên <strong>VPS DigitalOcean</strong>, tối
-                    ưu hóa <strong>Reverse Proxy</strong> kết hợp
-                    <strong>Nginx</strong>.
-                  </li>
-                  <li>
-                    Product live:
-                    <a
-                      href="https://www.englishforkids.me/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >englishforkids.me</a
                     >
                   </li>
                 </ul>
@@ -564,6 +635,16 @@
                 Cloudflare, AWS S3).
               </li>
             </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">THẾ MẠNH CÁ NHÂN</h2>
+          <div class="section-body">
+            <p>
+              Tự học nhanh, chủ động tìm hiểu công nghệ mới, sử dụng AI tools
+              hiệu quả, đã trải nghiệm triển khai trên nhiều nền tảng cloud.
+            </p>
           </div>
         </section>
 

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -209,12 +209,22 @@
 
         .contacts {
           margin-top: 1.8mm;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
           gap: 3px 14px;
           font-size: 9.2pt;
         }
 
+        .contacts > div {
+          margin-top: 1.1mm;
+        }
+
+        .contacts > div:first-child {
+          margin-top: 0;
+        }
+
         .section {
-          margin-top: 1.6mm;
+          margin-top: 1.2mm;
         }
 
         .section-title {
@@ -228,12 +238,13 @@
         }
 
         .entry {
+          display: block;
           gap: 2.05mm;
           margin-top: 0.92mm;
         }
 
         .entry:first-child {
-          margin-bottom: 4px;
+          margin-bottom: 2px;
         }
 
         .label {
@@ -259,12 +270,19 @@
           font-size: 9.34pt;
         }
 
+        .period {
+          display: block;
+          margin-bottom: 0.55mm;
+        }
+
         .skills {
+          display: block;
           gap: 0.62mm 5mm;
+          padding-left: 4.5mm;
         }
 
         .skills li {
-          margin-top: 0.1mm;
+          margin-top: 0.42mm;
         }
       }
     </style>
@@ -275,10 +293,13 @@
         <h1 class="name">Nguyễn Chí Thanh</h1>
         <p class="title">Software Engineer Intern</p>
         <div class="contacts">
+          <div>Date of Birth: 22/10/2004</div>
           <div>Phone: 0359 498 968</div>
           <div>
             Email:
-            <a href="mailto:a01204496068@gmail.com">a01204496068@gmail.com</a>
+            <a href="mailto:ngchithanh.dev@gmail.com"
+              >ngchithanh.dev@gmail.com</a
+            >
           </div>
           <div>Address: Thu Duc, Ho Chi Minh City</div>
           <div>
@@ -315,17 +336,59 @@
         <h2 class="section-title">Career Objective</h2>
         <div class="section-body">
           <p class="summary">
-            Final-year student oriented toward Software Engineering/Fullstack,
-            with practical experience in frontend implementation and backend
-            integration. Objective: seeking an internship role to contribute to
-            real product features, strengthen engineering fundamentals, and
-            improve collaboration in team delivery workflows.
+            Fourth-year CS student at HUTECH, seeking a Software Engineer
+            internship at a product company or startup. Experienced in freelance
+            development for a real business client, with multiple deployed
+            personal and team projects. Fast self-learner who actively explores
+            new technologies and leverages AI tools in development workflows.
           </p>
         </div>
       </section>
 
       <section class="section">
-        <h2 class="section-title">Featured GitHub Projects</h2>
+        <h2 class="section-title">Work Experience</h2>
+        <div class="section-body">
+          <article class="entry">
+            <div class="period">06/2025 – 01/2026</div>
+            <div>
+              <p class="entry-title">
+                Freelance Fullstack Developer
+                <span class="entry-sub"
+                  >| Language Center (Language Center SaaS) ·
+                  <a
+                    href="https://github.com/thnkthuhigh/language-center-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >github.com/thnkthuhigh/language-center-saas</a
+                  ></span
+                >
+              </p>
+              <ul>
+                <li>
+                  Freelance project building a management app for a real English
+                  language center — worked directly with the business owner.
+                </li>
+                <li>
+                  Fullstack: React + TypeScript + Node.js/Express + MongoDB +
+                  Socket.IO. Deployed on VPS DigitalOcean + Nginx + Cloudflare.
+                </li>
+                <li>
+                  Product was fully built and demoed to the client. Demo:
+                  <a
+                    href="https://www.englishforkids.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >englishforkids.me</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Featured Projects</h2>
         <div class="section-body">
           <article class="entry">
             <div class="period">01/2026 – Present</div>
@@ -342,7 +405,9 @@
                   ></span
                 >
               </p>
-              <p class="label">Role: Contributor (5-member team)</p>
+              <p class="label">
+                Role: Project Lead & Integrator (5-member team)
+              </p>
               <p class="label">
                 Description: Multi-role healthcare clinic management system
                 (Doctor, Patient, Admin).
@@ -354,12 +419,16 @@
                 <li>
                   Set up <strong>Monorepo</strong> architecture
                   (<strong>apps</strong>, <strong>packages/shared</strong>) and
-                  standardized <strong>local</strong> environments.
+                  standardized <strong>local</strong> environments with
+                  <strong>Docker</strong>.
                 </li>
                 <li>
-                  Contributed to <strong>Pull Request reviews</strong>, followed
-                  <strong>Git Flow</strong>, and applied
-                  <strong>pre-commit hooks</strong> in team workflow.
+                  Reviewed and merged all branches from team members; served as
+                  the final approver before integration into the release build.
+                </li>
+                <li>
+                  Developed the <strong>Admin module</strong>: user management,
+                  role-based access control, and cross-role data coordination.
                 </li>
               </ul>
             </div>
@@ -380,7 +449,7 @@
                   ></span
                 >
               </p>
-              <p class="label">Role: Fullstack Developer</p>
+              <p class="label">Role: Fullstack Developer (Team size: 1)</p>
               <p class="label">
                 Description: AI platform supporting automated document
                 processing, drafting, and publishing.
@@ -398,64 +467,16 @@
                   processing via Celery/Redis.
                 </li>
                 <li>
-                  Built a platform for automated document processing, drafting,
-                  and publishing workflows.
+                  Scale: <strong>50+ API endpoints</strong>, automated testing,
+                  CI/CD pipeline.
                 </li>
                 <li>
-                  Product live:
+                  Demo:
                   <a
                     href="https://proze.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     >proze.app</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="entry">
-            <div class="period">06/2025 – 01/2026</div>
-            <div>
-              <p class="entry-title">
-                Language Center SaaS
-                <span class="entry-sub"
-                  >|
-                  <a
-                    href="https://github.com/thnkthuhigh/language-center-saas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >github.com/thnkthuhigh/language-center-saas</a
-                  ></span
-                >
-              </p>
-              <p class="label">Role: Fullstack Developer</p>
-              <p class="label">
-                Description: SaaS application for class management, finance, and
-                language-center operations.
-              </p>
-              <p class="label">
-                Tech Stack: React, Node.js, Express, MongoDB, Socket.IO, Nginx,
-                Cloudflare
-              </p>
-              <ul>
-                <li>
-                  Built <strong>RESTful APIs</strong> and integrated
-                  <strong>Socket.IO</strong> for
-                  <strong>realtime</strong> workflows (attendance, payments).
-                </li>
-                <li>
-                  Operated production on <strong>DigitalOcean VPS</strong> and
-                  optimized <strong>Reverse Proxy</strong> setup with
-                  <strong>Nginx</strong>.
-                </li>
-                <li>
-                  Product live:
-                  <a
-                    href="https://www.englishforkids.me/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >englishforkids.me</a
                   >
                 </li>
               </ul>
@@ -488,6 +509,17 @@
               Cloudflare, AWS S3).
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Personal Strengths</h2>
+        <div class="section-body">
+          <p>
+            Fast self-learner, proactive with new technologies, effective use of
+            AI tools, hands-on experience deploying across multiple cloud
+            platforms.
+          </p>
         </div>
       </section>
 

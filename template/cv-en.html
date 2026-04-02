@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -253,6 +253,8 @@
           margin: 0;
           padding: 0;
           background: #fff;
+          font-size: 10.1pt;
+          line-height: 1.38;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
         }
@@ -283,56 +285,109 @@
           width: 100%;
           min-height: auto;
           margin: 0;
+          border: none;
           box-shadow: none;
+          overflow: hidden;
         }
 
         .cv-header {
-          padding: 8.9mm 10.9mm 4.2mm;
+          padding: 9mm 11mm 4.5mm;
+          gap: 8mm;
+        }
+
+        .avatar {
+          width: 30mm;
+          height: 30mm;
+        }
+
+        .name {
+          font-size: 19pt;
+        }
+
+        .role {
+          margin: 1.2mm 0 2mm;
+          font-size: 11pt;
         }
 
         .contact-grid {
           gap: 4px 18px;
-          font-size: 9.42pt;
+          font-size: 9.3pt;
         }
 
         .section-title {
-          margin: 0 0 1.35mm;
-          padding: 1.08mm 0;
+          margin: 0;
+          padding: 1.5mm 4mm;
+          font-size: 10.8pt;
         }
 
         section + section {
-          margin-top: 1.2mm;
+          margin-top: 0;
         }
 
         .section-body {
-          padding: 0 9.9mm 1.15mm;
-          font-size: 9.95pt;
+          padding: 1.5mm 11mm 1.5mm;
+          font-size: 9.8pt;
         }
 
         .section-body p {
-          margin: 0.62mm 0;
-          line-height: 1.35;
+          margin: 0.6mm 0;
+          line-height: 1.38;
         }
 
         .timeline {
-          gap: 1.02mm;
+          gap: 1.2mm;
+        }
+
+        .timeline-item {
+          grid-template-columns: 33mm minmax(0, 1fr);
+          gap: 2mm;
         }
 
         .timeline-item:first-child {
-          margin-bottom: 2.4mm;
+          margin-bottom: 1mm;
+        }
+
+        .timeline-period {
+          font-size: 9.8pt;
+        }
+
+        .timeline-main {
+          line-height: 1.36;
+        }
+
+        .timeline-head {
+          font-size: 10pt;
+        }
+
+        .timeline-sub {
+          font-size: 9.3pt;
+        }
+
+        .bullet-list {
+          margin-top: 0.5mm;
         }
 
         .bullet-list li {
-          margin-top: 0.4mm;
-          margin-bottom: 1px;
-          line-height: 1.29;
-          font-size: 9.66pt;
+          margin-top: 0.35mm;
+          margin-bottom: 0;
+          line-height: 1.36;
+          font-size: 9.5pt;
         }
 
-        .skills-grid li,
-        .cert-list li,
-        .timeline-main {
-          line-height: 1.34;
+        .skills-grid {
+          gap: 0.5mm 5mm;
+        }
+
+        .skills-grid li {
+          margin-top: 0.4mm;
+          font-size: 9.5pt;
+          line-height: 1.36;
+        }
+
+        .cert-list li {
+          margin-top: 0.4mm;
+          font-size: 9.5pt;
+          line-height: 1.36;
         }
       }
     </style>
@@ -349,11 +404,12 @@
             <p class="role">Software Engineer Intern</p>
 
             <div class="contact-grid">
+              <div class="contact-item">Date of Birth: 22/10/2004</div>
               <div class="contact-item">Phone: 0359 498 968</div>
               <div class="contact-item">
                 Email:
-                <a href="mailto:a01204496068@gmail.com"
-                  >a01204496068@gmail.com</a
+                <a href="mailto:ngchithanh.dev@gmail.com"
+                  >ngchithanh.dev@gmail.com</a
                 >
               </div>
               <div class="contact-item">Address: Thu Duc, Ho Chi Minh City</div>
@@ -392,32 +448,79 @@
           <h2 class="section-title">CAREER OBJECTIVE</h2>
           <div class="section-body">
             <p>
-              Final-year student oriented toward Software Engineering/Fullstack,
-              with practical experience in frontend implementation and backend
-              integration. Objective: seeking an internship role to contribute
-              to real product features, strengthen engineering fundamentals,
-              and improve collaboration in team delivery workflows.
+              Fourth-year CS student at HUTECH, seeking a
+              <strong>Software Engineer internship</strong> at a product company
+              or startup. Experienced in freelance development for a real
+              business client, with multiple deployed personal and team
+              projects. Fast self-learner who actively explores new technologies
+              and leverages AI tools in development workflows.
             </p>
           </div>
         </section>
 
         <section>
-          <h2 class="section-title">FEATURED GITHUB PROJECTS</h2>
+          <h2 class="section-title">WORK EXPERIENCE</h2>
+          <div class="section-body timeline">
+            <article class="timeline-item">
+              <div class="timeline-period">06/2025 – 01/2026</div>
+              <div class="timeline-main">
+                <span class="timeline-head">Freelance Fullstack Developer</span>
+                <span class="timeline-sub"
+                  >| Language Center (Language Center SaaS) ·
+                  <a
+                    href="https://github.com/thnkthuhigh/language-center-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >github.com/thnkthuhigh/language-center-saas</a
+                  ></span
+                >
+                <ul class="bullet-list">
+                  <li>
+                    Freelance project building an end-to-end management app for
+                    a real English language center — worked directly with the
+                    business owner.
+                  </li>
+                  <li>
+                    Designed and built fullstack: React + TypeScript +
+                    Node.js/Express + MongoDB + Socket.IO realtime.
+                  </li>
+                  <li>
+                    Deployed on <strong>DigitalOcean VPS</strong> + Nginx +
+                    Cloudflare with automated testing for release stability.
+                  </li>
+                  <li>
+                    Product was fully built and demoed to the client. Demo:
+                    <a
+                      href="https://www.englishforkids.me/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >englishforkids.me</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">FEATURED PROJECTS</h2>
           <div class="section-body timeline">
             <article class="timeline-item">
               <div class="timeline-period">01/2026 – Present</div>
               <div class="timeline-main">
-                <span class="timeline-head"
-                  ><a
+                <span class="timeline-head">Healthcare Clinic System</span>
+                <span class="timeline-sub"
+                  >|
+                  <a
                     href="https://github.com/thnkthuhigh/healthcare-clinic-system"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Healthcare Clinic System</a
+                    >github.com/thnkthuhigh/healthcare-clinic-system</a
                   ></span
                 >
-                <span class="timeline-sub">| Source (GitHub)</span>
                 <ul class="bullet-list">
-                  <li>Role: Contributor (5-member team).</li>
+                  <li>Role: Project Lead & Integrator (5-member team).</li>
                   <li>
                     Description: Multi-role healthcare clinic management system
                     (Doctor, Patient, Admin).
@@ -432,9 +535,14 @@
                     environments.
                   </li>
                   <li>
-                    Contributed to <strong>Pull Request reviews</strong>,
-                    followed <strong>Git Flow</strong>, and applied
-                    <strong>pre-commit hooks</strong> in team workflow.
+                    Reviewed and merged all branches from team members; served
+                    as the final approver before integration into the release
+                    build.
+                  </li>
+                  <li>
+                    Developed the <strong>Admin module</strong>: user
+                    management, role-based access control, and cross-role data
+                    coordination.
                   </li>
                 </ul>
               </div>
@@ -454,7 +562,7 @@
                   ></span
                 >
                 <ul class="bullet-list">
-                  <li>Role: Fullstack Developer.</li>
+                  <li>Role: Fullstack Developer (Team size: 1).</li>
                   <li>
                     Description: AI platform supporting automated document
                     processing, drafting, and publishing.
@@ -471,62 +579,16 @@
                     task processing via Celery/Redis.
                   </li>
                   <li>
-                    Built a platform for automated document processing,
-                    drafting, and publishing workflows.
+                    Scale: <strong>50+ API endpoints</strong>, automated
+                    testing, CI/CD pipeline.
                   </li>
                   <li>
-                    Product live:
+                    Demo:
                     <a
                       href="https://proze.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       >proze.app</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-period">06/2025 – 01/2026</div>
-              <div class="timeline-main">
-                <span class="timeline-head">Language Center SaaS</span>
-                <span class="timeline-sub"
-                  >|
-                  <a
-                    href="https://github.com/thnkthuhigh/language-center-saas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >github.com/thnkthuhigh/language-center-saas</a
-                  ></span
-                >
-                <ul class="bullet-list">
-                  <li>Role: Fullstack Developer.</li>
-                  <li>
-                    Description: SaaS application for class management, finance,
-                    and language-center operations.
-                  </li>
-                  <li>
-                    Tech Stack: React, Node.js, Express, MongoDB, Socket.IO,
-                    Nginx, Cloudflare.
-                  </li>
-                  <li>
-                    Built <strong>RESTful APIs</strong> and integrated
-                    <strong>Socket.IO</strong> for
-                    <strong>realtime</strong> workflows (attendance, payments).
-                  </li>
-                  <li>
-                    Operated production on <strong>DigitalOcean VPS</strong> and
-                    optimized <strong>Reverse Proxy</strong> setup with
-                    <strong>Nginx</strong>.
-                  </li>
-                  <li>
-                    Product live:
-                    <a
-                      href="https://www.englishforkids.me/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >englishforkids.me</a
                     >
                   </li>
                 </ul>
@@ -559,6 +621,17 @@
                 Cloudflare, AWS S3).
               </li>
             </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">PERSONAL STRENGTHS</h2>
+          <div class="section-body">
+            <p>
+              Fast self-learner, proactive with new technologies, effective use
+              of AI tools, hands-on experience deploying across multiple cloud
+              platforms.
+            </p>
           </div>
         </section>
 

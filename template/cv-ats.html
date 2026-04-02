@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -220,12 +220,22 @@
 
         .contacts {
           margin-top: 1.85mm;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
           gap: 3px 15px;
           font-size: 9.28pt;
         }
 
+        .contacts > div {
+          margin-top: 1.1mm;
+        }
+
+        .contacts > div:first-child {
+          margin-top: 0;
+        }
+
         .section {
-          margin-top: 1.75mm;
+          margin-top: 1.3mm;
         }
 
         .section-title {
@@ -239,12 +249,13 @@
         }
 
         .entry {
+          display: block;
           gap: 2.1mm;
           margin-top: 1mm;
         }
 
         .entry:first-child {
-          margin-bottom: 5px;
+          margin-bottom: 3px;
         }
 
         .label {
@@ -265,11 +276,18 @@
         }
 
         .skills {
+          display: block;
           gap: 0.7mm 5.2mm;
+          padding-left: 4.5mm;
         }
 
         .skills li {
-          margin-top: 0.14mm;
+          margin-top: 0.42mm;
+        }
+
+        .period {
+          display: block;
+          margin-bottom: 0.55mm;
         }
       }
     </style>
@@ -280,10 +298,13 @@
         <h1 class="name">Nguyễn Chí Thanh</h1>
         <p class="title">Software Engineer Intern</p>
         <div class="contacts">
+          <div>Ngày sinh: 22/10/2004</div>
           <div>Điện thoại: 0359 498 968</div>
           <div>
             Email:
-            <a href="mailto:a01204496068@gmail.com">a01204496068@gmail.com</a>
+            <a href="mailto:ngchithanh.dev@gmail.com"
+              >ngchithanh.dev@gmail.com</a
+            >
           </div>
           <div>Thủ Đức, Hồ Chí Minh</div>
           <div>
@@ -320,17 +341,59 @@
         <h2 class="section-title">Mục tiêu nghề nghiệp</h2>
         <div class="section-body">
           <p class="summary">
-            Sinh viên năm 4 định hướng Software Engineering/Fullstack, có kinh
-            nghiệm triển khai frontend và tích hợp backend trong các dự án thực
-            tế. Mục tiêu: tìm cơ hội thực tập để đóng góp vào tính năng sản
-            phẩm, củng cố nền tảng kỹ thuật và nâng cao khả năng phối hợp trong
-            quy trình làm việc nhóm.
+            Sinh viên năm 4 HUTECH, tìm vị trí thực tập Software Engineer tại
+            công ty product hoặc startup. Có kinh nghiệm freelance xây ứng dụng
+            cho doanh nghiệp thực tế, cùng nhiều dự án cá nhân và nhóm đã
+            deploy. Tự học nhanh, chủ động tiếp cận công nghệ mới và vận dụng AI
+            tools trong quy trình phát triển.
           </p>
         </div>
       </section>
 
       <section class="section">
-        <h2 class="section-title">Dự án GitHub nổi bật</h2>
+        <h2 class="section-title">Kinh nghiệm làm việc</h2>
+        <div class="section-body">
+          <article class="entry">
+            <div class="period">06/2025 – 01/2026</div>
+            <div>
+              <p class="entry-title">
+                Freelance Fullstack Developer
+                <span class="entry-sub"
+                  >| Trung tâm tiếng Anh (Language Center SaaS) ·
+                  <a
+                    href="https://github.com/thnkthuhigh/language-center-saas"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >github.com/thnkthuhigh/language-center-saas</a
+                  ></span
+                >
+              </p>
+              <ul>
+                <li>
+                  Nhận dự án freelance xây ứng dụng quản lý cho một trung tâm
+                  ngoại ngữ thực tế — làm việc trực tiếp với chủ doanh nghiệp.
+                </li>
+                <li>
+                  Fullstack: React + TypeScript + Node.js/Express + MongoDB +
+                  Socket.IO. Deploy trên VPS DigitalOcean + Nginx + Cloudflare.
+                </li>
+                <li>
+                  Sản phẩm đã hoàn thiện và demo cho phía trung tâm. Demo:
+                  <a
+                    href="https://www.englishforkids.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >englishforkids.me</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Dự án nổi bật</h2>
         <div class="section-body">
           <article class="entry">
             <div class="period">01/2026 – Nay</div>
@@ -348,7 +411,7 @@
                 >
               </p>
               <p class="label">
-                Vai trò: Thành viên phát triển (Team 5 thành viên)
+                Vai trò: Project Lead & Integrator (Team 5 thành viên)
               </p>
               <p class="label">
                 Mô tả: Hệ thống quản lý phòng khám đa khoa phân quyền đa người
@@ -362,12 +425,15 @@
                   Thiết lập kiến trúc
                   <strong>Monorepo</strong> (<strong>apps</strong>,
                   <strong>packages/shared</strong>) và chuẩn hóa môi trường
-                  <strong>local</strong>.
+                  <strong>local</strong> bằng <strong>Docker</strong>.
                 </li>
                 <li>
-                  Tham gia review source code (<strong>Pull Requests</strong>),
-                  tuân thủ <strong>Git Flow</strong> và áp dụng
-                  <strong>pre-commit hooks</strong> trong quy trình nhóm.
+                  Review và merge tất cả nhánh từ các thành viên, là người duyệt
+                  cuối cùng trước khi tích hợp vào sản phẩm.
+                </li>
+                <li>
+                  Phát triển module <strong>Admin</strong>: quản lý người dùng,
+                  phân quyền và điều phối dữ liệu giữa các vai trò.
                 </li>
               </ul>
             </div>
@@ -388,7 +454,7 @@
                   ></span
                 >
               </p>
-              <p class="label">Vai trò: Fullstack Developer</p>
+              <p class="label">Vai trò: Fullstack Developer (Team size: 1)</p>
               <p class="label">
                 Mô tả: Nền tảng AI hỗ trợ xử lý, soạn thảo và xuất bản tài liệu
                 tự động.
@@ -399,65 +465,22 @@
               </p>
               <ul>
                 <li>
-                  Triển khai kiến trúc <strong>microservices</strong> tách lớp
-                  (<strong>Frontend SSR/SSG</strong> &
-                  <strong>Backend FastAPI</strong>).
+                  Triển khai kiến trúc <strong>tách lớp</strong> (<strong
+                    >Frontend SSR/SSG</strong
+                  >
+                  & <strong>Backend FastAPI</strong>).
                 </li>
                 <li>
-                  Product live:
+                  Quy mô: <strong>50+ API endpoints</strong>, automated testing,
+                  CI/CD pipeline.
+                </li>
+                <li>
+                  Demo:
                   <a
                     href="https://proze.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     >proze.app</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="entry">
-            <div class="period">06/2025 – 01/2026</div>
-            <div>
-              <p class="entry-title">
-                Language Center SaaS
-                <span class="entry-sub"
-                  >|
-                  <a
-                    href="https://github.com/thnkthuhigh/language-center-saas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >github.com/thnkthuhigh/language-center-saas</a
-                  ></span
-                >
-              </p>
-              <p class="label">Vai trò: Fullstack Developer</p>
-              <p class="label">
-                Mô tả: Ứng dụng SaaS quản lý lớp học, tài chính và nghiệp vụ
-                trung tâm ngoại ngữ.
-              </p>
-              <p class="label">
-                Tech Stack: React, Node.js, Express, MongoDB, Socket.IO, Nginx,
-                Cloudflare
-              </p>
-              <ul>
-                <li>
-                  Xây dựng <strong>RESTful API</strong> và tích hợp
-                  <strong>Socket.IO</strong> để xử lý luồng
-                  <strong>realtime</strong> (điểm danh, thanh toán).
-                </li>
-                <li>
-                  Vận hành thực tế trên <strong>VPS DigitalOcean</strong>, tối
-                  ưu hóa <strong>Reverse Proxy</strong> kết hợp
-                  <strong>Nginx</strong>.
-                </li>
-                <li>
-                  Product live:
-                  <a
-                    href="https://www.englishforkids.me/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >englishforkids.me</a
                   >
                 </li>
               </ul>
@@ -490,6 +513,16 @@
               Cloudflare, AWS S3).
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Thế mạnh cá nhân</h2>
+        <div class="section-body">
+          <p>
+            Tự học nhanh, chủ động tìm hiểu công nghệ mới, sử dụng AI tools hiệu
+            quả, đã trải nghiệm triển khai trên nhiều nền tảng cloud.
+          </p>
         </div>
       </section>
 

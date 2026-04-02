@@ -1,4 +1,4 @@
-# Nguyễn Chí Thanh — Portfolio (React + TypeScript)
+﻿# Nguyễn Chí Thanh — Portfolio (React + TypeScript)
 
 Portfolio website cho vị trí **Frontend Internship**.
 
@@ -100,6 +100,6 @@ src/
 
 ## Contact
 
-- Email: `a01204496068@gmail.com`
+- Email: `ngchithanh.dev@gmail.com`
 - LinkedIn: `https://www.linkedin.com/in/thnkthuhigh/`
 - GitHub: `https://github.com/thnkthuhigh`
