@@ -1392,7 +1392,19 @@
       },
       {
         selector: ".hero-cv-actions a:nth-child(5)",
-        text: "Tải CV PDF (1 click)",
+        text: "📄 Tải PDF Tiếng Việt",
+      },
+      {
+        selector: ".hero-cv-actions a:nth-child(6)",
+        text: "📄 Tải PDF English",
+      },
+      {
+        selector: ".hero-cv-actions a:nth-child(7)",
+        text: "📄 Tải ATS PDF VI",
+      },
+      {
+        selector: ".hero-cv-actions a:nth-child(8)",
+        text: "📄 Tải ATS PDF EN",
       },
       { selector: ".hero-case-rail .hero-rail-title", text: "Case nổi bật" },
       { selector: ".cv-inline-actions a:nth-child(1)", text: "CV ATS-safe" },
@@ -1407,7 +1419,11 @@
       },
       {
         selector: ".cv-inline-actions a:nth-child(5)",
-        text: "Tải PDF (1 click)",
+        text: "📄 Tải PDF VI",
+      },
+      {
+        selector: ".cv-inline-actions a:nth-child(6)",
+        text: "📄 Tải PDF EN",
       },
       { selector: "#cv-document .section-label", text: "CV Đầy Đủ" },
       {
@@ -1910,7 +1926,19 @@
       },
       {
         selector: ".hero-cv-actions a:nth-child(5)",
-        text: "Download CV PDF (1 click)",
+        text: "📄 Download PDF Vietnamese",
+      },
+      {
+        selector: ".hero-cv-actions a:nth-child(6)",
+        text: "📄 Download PDF English",
+      },
+      {
+        selector: ".hero-cv-actions a:nth-child(7)",
+        text: "📄 Download ATS PDF VI",
+      },
+      {
+        selector: ".hero-cv-actions a:nth-child(8)",
+        text: "📄 Download ATS PDF EN",
       },
       { selector: ".hero-case-rail .hero-rail-title", text: "Featured Cases" },
       { selector: ".cv-inline-actions a:nth-child(1)", text: "ATS-safe CV" },
@@ -1925,7 +1953,11 @@
       },
       {
         selector: ".cv-inline-actions a:nth-child(5)",
-        text: "Download PDF (1 click)",
+        text: "📄 Download PDF VI",
+      },
+      {
+        selector: ".cv-inline-actions a:nth-child(6)",
+        text: "📄 Download PDF EN",
       },
       { selector: "#cv-document .section-label", text: "Full CV" },
       {
