@@ -9,7 +9,8 @@
     "typecheck": "tsc -b --pretty false",
     "preview": "vite preview",
     "lint": "eslint .",
-    "ci": "npm run typecheck && npm run lint && npm run build"
+    "ci": "npm run typecheck && npm run lint && npm run build",
+    "pdf": "node scripts/generate-cv-pdf.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -25,6 +26,7 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
+    "playwright": "^1.59.1",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.0",
     "vite": "^6.1.0"
